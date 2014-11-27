@@ -1,0 +1,30 @@
+--------------------------------------------
+Story Relayer
+--------------------------------------------
+
+story-relayer is a web application.
+
+Index of this Document
+
+        (A) Required Software
+        (B) How to build
+
+--------------------------------------------
+(A) Required Software
+--------------------------------------------
+
+    1) Java 1.7
+    2) Maven
+    3) MySql
+
+--------------------------------------------
+(B) How to Build
+--------------------------------------------
+
+    1) Build the project
+     - Go to <project directory> and execute the following commands
+
+       $ mvn clean install jetty:run
+
+    2) Open the browser and type following url
+        http://localhost:9090/story-relayer/index
