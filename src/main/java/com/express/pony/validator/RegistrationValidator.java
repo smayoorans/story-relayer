@@ -34,10 +34,6 @@ public class RegistrationValidator implements Validator{
 
         User reg = (User)target;
 
-        if(!(reg.getPassword().equals(reg.getConfirmPassword()))){
-            errors.rejectValue("password", "notmatch.password");
-        }
-
         if("NONE".equals(reg.getFavCategory())){
             errors.rejectValue("favCatogery", "required.favCatogery");
         }

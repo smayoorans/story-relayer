@@ -9,9 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Story Relayer</title>
 
-    <!-- Bootstrap -->
-    <link href="resources/css/registration.css" rel="stylesheet">
-
 </head>
 <body>
 
@@ -48,17 +45,18 @@
         </tr>
 
         <tr>
+            <td>UserName:</td>
+            <td><form:input path="username" /></td>
+
+        </tr>
+
+        <tr>
             <td>Password :</td>
             <td><form:password path="password" />
             </td>
 
         </tr>
-        <tr>
-            <td>Confirm Password :</td>
-            <td><form:password path="confirmPassword" />
-            </td>
 
-        </tr>
 
         <tr>
             <td>Favourite :</td>
@@ -70,14 +68,12 @@
         </tr>
 
         <tr>
-            <!--<td colspan="3"><input type="submit" /></td> -->
+
             <td colspan="2"><input type="submit" value="Register"/></td>
         </tr>
 
     </table>
 </form:form>
-
-<script src="resources/js/registration.js"></script>
 
 </body>
 </html>

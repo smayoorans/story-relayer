@@ -36,7 +36,14 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+    public String login(){
+
+        return "login";
+
+    }
+
+  /*  @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(@RequestParam(value = "error", required = false) String error,
                               @RequestParam(value = "logout", required = false) String logout) {
 
         ModelAndView model = new ModelAndView();
@@ -51,25 +58,8 @@ public class HomeController {
 
         return model;
 
-    }
+    }*/
 
-    //for 403 access denied page
-    @RequestMapping(value = "/403", method = RequestMethod.GET)
-    public ModelAndView accesssDenied() {
-
-        ModelAndView model = new ModelAndView();
-
-        //check if user is login
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (!(auth instanceof AnonymousAuthenticationToken)) {
-            UserDetails userDetail = (UserDetails) auth.getPrincipal();
-            model.addObject("username", userDetail.getUsername());
-        }
-
-        model.setViewName("403");
-        return model;
-
-    }
 
 }
 

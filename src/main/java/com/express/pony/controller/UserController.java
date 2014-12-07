@@ -27,20 +27,18 @@ public class UserController {
 
     @RequestMapping(value = "/registration-action", method = RequestMethod.POST)
     public String onRegistrationAction(@ModelAttribute("user") User user,
-                          BindingResult bindingResult,
-                          Model model) {
+                                       BindingResult bindingResult,
+                                       Model model) {
   /*      if (bindingResult.hasErrors()) {
             return "sign-up";
         } else {*/
-      /*      user.setUserId(authService.findNewUserId());
-            user.setStatus("PENDING_APPROVAL");*/
-        System.out.println("===========================");
-        System.out.println("===========================" + user);
-            userService.addUser(user);
-            userService.addUserRole(new UserRole("123", "R1002"));
+        String newUserId = userService.findNewUserId();
+        user.setUserId(newUserId);
+        userService.addUser(user);
+        userService.addUserRole(new UserRole(newUserId, "R1002"));
 
-            return "redirect:registration";
-        }
+        return "redirect:registration";
+    }
 
 
 }

@@ -42,12 +42,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public String findNewUserId() {
-        List results = sessionFactory.getCurrentSession().createQuery("select max(userId) from User").list();
+        Query query = sessionFactory.getCurrentSession().createQuery("select max(userId) from User");
+        String id = (String) query.uniqueResult();
         String newUserId = "U1001";
-        if(results.get(0) != null){
-            String lastId = (String)results.get(0);
-            newUserId = "U" + (Integer.parseInt(lastId.substring(1)) + 1);
-        }
+        if(id != null) newUserId = "U" + (Integer.parseInt(id.substring(1)) + 1);
         return newUserId;
     }
 
@@ -56,7 +54,6 @@ public class UserDaoImpl implements UserDao {
         String hqlQuery = "from User where userId = :userId";
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
         query.setParameter("userId", userId);
-        User user = (User) query.list().get(0);
-        return user;
+        return (User) query.uniqueResult();
     }
 }

@@ -11,6 +11,7 @@
     <http auto-config="true" use-expressions="true">
 
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/welcome" access="hasRole('ROLE_USER')" />
 
         <!-- access denied page -->
         <access-denied-handler error-page="/403" />
@@ -28,10 +29,9 @@
     <authentication-manager>
         <authentication-provider>
             <jdbc-user-service data-source-ref="dataSource"
-                               users-by-username-query=
-                                       "select LOGIN_NAME, PASSWORD from USER where LOGIN_NAME=?"
-                               authorities-by-username-query=
-                                       "select LOGIN_NAME, AUTHORITY from USER_AUTH where LOGIN_NAME=?"/>
+                               users-by-username-query="select username as username, password as password, 'true' as enabled from User where username =?"
+                               authorities-by-username-query="select User.username as username, Role.authority as authorities from User, Role, UserRole
+                               where User.username =? AND User.userId = UserRole.userId AND Role.roleId = UserRole.roleId"/>
         </authentication-provider>
     </authentication-manager>
 
