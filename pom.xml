@@ -10,7 +10,8 @@
 
     <properties>
         <spring.version>3.2.0.RELEASE</spring.version>
-        <spring.security.version>3.2.3.RELEASE</spring.security.version>
+        <!--<spring.security.version>3.2.3.RELEASE</spring.security.version>-->
+        <spring.security.version>3.0.5.RELEASE</spring.security.version>
         <jstl.version>1.2</jstl.version>
         <mysql.connector.version>5.1.30</mysql.connector.version>
     </properties>
@@ -78,6 +79,12 @@
         <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
             <version>${spring.security.version}</version>
         </dependency>
@@ -118,6 +125,19 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-annotations</artifactId>
             <version>3.5.6-Final</version>
+        </dependency>
+
+        <!-- logging dependency -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
         </dependency>
 
 

@@ -9,71 +9,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Story Relayer</title>
 
+    <!-- Bootstrap -->
+    <link href="<c:url value="/resources/css/bootstrap.css"/>" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
 <body>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Story Relayer</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <%--<li><a href="">Default</a></li>--%>
+                <li><a href="">Sign Up</a></li>
+                <li class="active">
+                    <a href="">Login <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
 
-<h2>Register to Story-Relayer</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="well">
+                <form:form class="form-horizontal" role="form" method="post" commandName="user" action="registration-action">
 
-<form:form method="POST" commandName="user" action="registration-action">
-    <form:errors path="*" cssClass="errorblock" element="div" />
-    <table>
-        <tr>
-            <td>First Name :</td>
-            <td><form:input path="firstName" id="firstName"/>
-            </td>
+                    <h3>Registration Details</h3>
+                    <br>
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="firstName" path="firstName" placeholder="First Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="lastName" path="lastName" placeholder="Last Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="displayName" class="col-sm-2 control-label">Display Name</label>
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="displayName" path="displayName" placeholder="Display Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="emailAddress" path="emailAddress" placeholder="Email"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">UserName</label>
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="username" path="username" placeholder="Username"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="password" path="password" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Sign in</button>
+                        </div>
+                    </div>
+                </form:form>
+            </div>
 
-        </tr>
+        </div>
 
-        <tr>
-            <td>Last Name :</td>
-            <td><form:input path="lastName" />
-            </td>
+    </div>
 
-        </tr>
+</div>
 
-        <tr>
-            <td>Display Name :</td>
-            <td><form:input path="displayName" />
-            </td>
-
-        </tr>
-
-        <tr>
-            <td>Email Adress :</td>
-            <td><form:input path="emailAddress" /></td>
-
-        </tr>
-
-        <tr>
-            <td>UserName:</td>
-            <td><form:input path="username" /></td>
-
-        </tr>
-
-        <tr>
-            <td>Password :</td>
-            <td><form:password path="password" />
-            </td>
-
-        </tr>
-
-
-        <tr>
-            <td>Favourite :</td>
-            <td><form:select path="favCategory">
-                <form:option value="NONE" label="--- Select ---" />
-                <form:options items="${favCatogeryList}" />
-            </form:select></td>
-
-        </tr>
-
-        <tr>
-
-            <td colspan="2"><input type="submit" value="Register"/></td>
-        </tr>
-
-    </table>
-</form:form>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="resources/js/bootstrap.js"></script>
 </body>
 </html>
