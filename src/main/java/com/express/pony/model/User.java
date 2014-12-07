@@ -1,33 +1,26 @@
 package com.express.pony.model;
 
-/**
- * Created by pratheep on 11/30/14.
- */
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-import java.sql.Timestamp;
+@Entity
+public class User implements Serializable {
 
-public class Registration {
+    private static final long serialVersionUID = -6790693372846798580L;
 
-    //textbox
+    @Id
+    @GeneratedValue
+    private Long id;
     private String firstName;
-
-    //textbox
     private String lastName;
-
-    //textbox
     private String displayName;
-
-    //textbox
     private String emailAddress;
-
-    //textbox
-    private String favCatogery;
-
-    //password
+    private String favCategory;
     private String password;
     private String confirmPassword;
-
-
+    
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -53,12 +46,12 @@ public class Registration {
         return displayName;
     }
 
-    public void setFavCatogery(String favCatogery) {
-        this.favCatogery = favCatogery;
+    public void setFavCategory(String favCategory) {
+        this.favCategory = favCategory;
     }
 
-    public String getFavCatogery() {
-        return favCatogery;
+    public String getFavCategory() {
+        return favCategory;
     }
 
     public void setEmailAddress(String emailAddress) {
@@ -83,5 +76,19 @@ public class Registration {
 
     public String getConfirmPassword() {
         return confirmPassword;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("firstName='").append(firstName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", displayName='").append(displayName).append('\'');
+        sb.append(", emailAddress='").append(emailAddress).append('\'');
+        sb.append(", favCategory='").append(favCategory).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", confirmPassword='").append(confirmPassword).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

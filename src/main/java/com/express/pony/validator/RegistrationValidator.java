@@ -1,20 +1,17 @@
 package com.express.pony.validator;
 
-/**
- * Created by pratheep on 12/1/14.
- */
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import com.express.pony.model.Registration;
+import com.express.pony.model.User;
 
 public class RegistrationValidator implements Validator{
     @Override
 
     public boolean supports(Class clazz) {
         //just validate the Customer instances
-        return Registration.class.isAssignableFrom(clazz);
+        return User.class.isAssignableFrom(clazz);
     }
 
     @Override
@@ -35,13 +32,13 @@ public class RegistrationValidator implements Validator{
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword",
                 "required.confirmPassword", "Confirm Password required");
 
-        Registration reg = (Registration)target;
+        User reg = (User)target;
 
         if(!(reg.getPassword().equals(reg.getConfirmPassword()))){
             errors.rejectValue("password", "notmatch.password");
         }
 
-        if("NONE".equals(reg.getFavCatogery())){
+        if("NONE".equals(reg.getFavCategory())){
             errors.rejectValue("favCatogery", "required.favCatogery");
         }
     }

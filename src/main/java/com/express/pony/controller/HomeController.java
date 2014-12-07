@@ -72,33 +72,4 @@ public class HomeController {
     }
 
 }
-/*
-public class HomeController {
 
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String getLoginPage() {
-        return "login";
-    }
-
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String getLogoutPage(ModelMap modelMap) {
-        modelMap.addAttribute("logoutSuccess", true);
-        return "login";
-    }
-
-    @RequestMapping(value = "/loginfailed", method = RequestMethod.GET)
-    public String getLoginFailedPage(ModelMap modelMap) {
-        modelMap.addAttribute("error", true);
-        return "login";
-    }
-
-
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String getHome(ModelMap modelMap, Principal principal) {
-        String name = principal.getName();
-        modelMap.addAttribute("username", name);
-        return "index";
-    }
-}
-*/

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/story_relayer</property>
+        <property name="hibernate.connection.username">user</property>
+        <property name="hibernate.connection.password">password</property>
+
+        <mapping class="com.express.pony.model.Role"/>
+        <mapping class="com.express.pony.model.User"/>
+        <mapping class="com.express.pony.model.UserRole"/>
+    </session-factory>
+</hibernate-configuration>
