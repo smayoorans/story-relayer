@@ -10,5 +10,10 @@
         <pattern>*/*</pattern>
     </decorator>
 
+    <decorator name="loginLayout" page="login-layout.jsp">
+        <pattern>*/login</pattern>
+        <pattern>*/registration</pattern>
+    </decorator>
+
 </decorators>
 

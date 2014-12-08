@@ -14,5 +14,6 @@
         <mapping class="com.express.pony.model.Role"/>
         <mapping class="com.express.pony.model.User"/>
         <mapping class="com.express.pony.model.UserRole"/>
+        <mapping class="com.express.pony.model.Story"/>
     </session-factory>
 </hibernate-configuration>
