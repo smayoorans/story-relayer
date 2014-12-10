@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <%@taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -20,7 +20,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -33,12 +34,20 @@
                 <li class="active"><a href="#">Home</a></li>
             </ul>--%>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Static top</a></li>
-                <li class="active">
-                    <a href="">Fixed top <span class="sr-only">(current)</span></a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome user
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>   Setting</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>   Profile</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  Logout</a></li>
+                    </ul>
                 </li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
     </div>
 </nav>
 

@@ -26,8 +26,8 @@ public class StoryServiceImpl implements StoryService {
     }
 
     @Transactional
-    public List<User> listStories() {
-        return null;
+    public List<Story> listStories(String username) {
+        return storyDao.listStories(username);
     }
 
     @Transactional

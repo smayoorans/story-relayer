@@ -25,8 +25,8 @@ public class StoryDaoImpl implements StoryDao {
     }
 
     @Override
-    public List<User> listStories() {
-        return null;
+    public List<Story> listStories(String username) {
+        return sessionFactory.getCurrentSession().createQuery("from Story").list();
     }
 
     @Override

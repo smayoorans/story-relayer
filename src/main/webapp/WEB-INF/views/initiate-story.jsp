@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -20,11 +19,18 @@
                     <br>
 
                     <div class="form-group">
+                        <label for="summery" class="col-sm-2 control-label">Title</label>
+
+                        <div class="col-sm-10">
+                            <form:input type="text" class="form-control" id="title" path="title"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="summery" class="col-sm-2 control-label">Story</label>
 
                         <div class="col-sm-10">
-                            <form:input type="text" class="form-control" id="summery" path="summery"
-                                        placeholder="Text"/>
+                            <form:textarea rows="10" class="form-control" id="summery" path="summery"/>
                         </div>
                     </div>
 
@@ -39,7 +45,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Initiate</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                     </div>
                 </form:form>

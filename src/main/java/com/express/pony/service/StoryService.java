@@ -11,7 +11,7 @@ public interface StoryService {
 
     public void initiateStory(Story story);
 
-    public List<User> listStories();
+    public List<Story> listStories(String username);
 
     public void removeStory(String id);
 
