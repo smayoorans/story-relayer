@@ -40,5 +40,11 @@ public class UserController {
         return "redirect:registration";
     }
 
+    @RequestMapping(value = "/user-profile", method = RequestMethod.GET)
+    public String getUserProfilePage(Map<String, Object> map) {
+        map.put("user", new User());
+        return "user-profile";
+    }
+
 
 }

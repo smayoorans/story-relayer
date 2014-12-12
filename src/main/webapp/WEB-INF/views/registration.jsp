@@ -10,12 +10,12 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="well">
                 <form:form class="form-horizontal" role="form" method="post" commandName="user"
                            action="registration-action">
 
-                    <h4>Registration Details</h4>
+                    <h3>Registration Details</h3>
                     Please enter your details in the form below.
                     <br>
                     <br>
@@ -109,19 +109,11 @@
 
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-default">Cancel</button>
                         </div>
                     </div>
                 </form:form>

@@ -54,5 +54,9 @@ public class StoryController {
     }
 
 
+    @RequestMapping(value = "/view-story", method = RequestMethod.GET)
+    public String showStoryViewPage(){
+              return "view-story";
+    }
 
 }

@@ -7,6 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title><decorator:title default="Welcome"/></title>
+    <link rel="icon" href="<c:url value="/resources/img/favicon.ico"/>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Bootstrap -->
@@ -28,7 +29,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand active" href="#">Story Relayer</a>
+            <a class="navbar-brand active" href="#">
+                <%--<img src="resources/img/logo.png" alt="" class="logo">--%>
+                Story Relayer
+            </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <%--<ul class="nav navbar-nav">
@@ -40,7 +44,7 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>   Setting</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>   Profile</a></li>
+                        <li><a href="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>   Profile</a></li>
 
                         <li class="divider"></li>
                         <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  Logout</a></li>
@@ -56,13 +60,22 @@
 
 <footer class="footer">
     <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+        <p class="text-muted">Copyright &copy; 1997 - 2014 hSenid Mobile Solutions. All Rights Reserved</p>
     </div>
 </footer>
 
 <%--<%@ include file="/WEB-INF/includes/footer.jsp"%>--%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+<script src="<c:url value="/resources/js/jquery.min.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/bootstrap.js"/>" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+
+
+</script>
+
 </body>
 </html>
 

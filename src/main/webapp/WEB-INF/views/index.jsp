@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Index</title>
+    <title>Story Relayer</title>
 </head>
 <body>
 
@@ -27,13 +27,14 @@
                 <div class="list-group">
                     <a href="#" class="list-group-item active" style="background-color: #c4074c;">
                         <span class="badge">92</span>
-                        Toprated Stories
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Top Rated Stories
                     </a>
-                    <a href="#" class="list-group-item">
+                    <a href="view-story" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
 
                         <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
                             diam eget risus varius blandit.</p>
+                        <small>Create by <span style="color: #2780e3">smayoorans</span>,   <cite> 23/12/2013 12:33PM</cite></small>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>

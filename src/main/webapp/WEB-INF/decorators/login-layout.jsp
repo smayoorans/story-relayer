@@ -7,6 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title><decorator:title default="Welcome"/></title>
+    <link rel="icon" href="<c:url value="/resources/img/favicon.ico"/>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Bootstrap -->

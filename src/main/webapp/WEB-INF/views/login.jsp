@@ -44,7 +44,9 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-default" onclick="location.href='index'">Cancel</button>
                         </div>
                     </div>
                 </form>
