@@ -17,5 +17,5 @@ public interface StoryService {
 
     public String findNewStoryId();
 
-    public User findStory(String storyId);
+    public Story findStory(String storyId);
 }

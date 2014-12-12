@@ -16,5 +16,5 @@ public interface StoryDao {
 
     public String findNewStoryId();
 
-    public User findStory(String storyId);
+    public Story findStory(String storyId);
 }

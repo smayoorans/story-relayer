@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
 
@@ -42,6 +43,15 @@ public class StoryController {
         storyService.initiateStory(story);
 
         return "redirect:index";
+    }
+
+    @RequestMapping(value = "/edit-story", method = RequestMethod.GET)
+    public String showStoryEditPage(HttpServletRequest request, Model model){
+         String storyId = request.getParameter("story-id");
+        System.out.println("story id" + storyId);
+        model.addAttribute("story", storyService.findStory(storyId));
+
+        return "edit-story";
     }
 
 

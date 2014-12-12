@@ -44,7 +44,10 @@ public class StoryDaoImpl implements StoryDao {
     }
 
     @Override
-    public User findStory(String storyId) {
-        return null;
+    public Story findStory(String storyId) {
+        String hqlQuery = "from Story where storyId = :storyId";
+        Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
+        query.setParameter("storyId", storyId);
+        return (Story) query.uniqueResult();
     }
 }

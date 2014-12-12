@@ -41,7 +41,7 @@ public class StoryServiceImpl implements StoryService {
     }
 
     @Transactional
-    public User findStory(String storyId) {
-        return null;
+    public Story findStory(String storyId) {
+        return storyDao.findStory(storyId);
     }
 }

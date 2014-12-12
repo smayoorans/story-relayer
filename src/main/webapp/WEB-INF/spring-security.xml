@@ -13,7 +13,8 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
         <intercept-url pattern="/login" access="permitAll" />
         
-        <intercept-url pattern="/index" access="hasRole('ROLE_USER')" />
+        <!--<intercept-url pattern="/index" access="hasRole('ROLE_USER')" />-->
+        <intercept-url pattern="/index" access="permitAll" />
 
         <form-login login-page="/login"
                     default-target-url="/index"
