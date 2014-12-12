@@ -31,56 +31,49 @@
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                 </div>
             </div>
-
-            <%--<div class="panel panel-info">
-                <div class="panel-heading">
-                    Top Rated Stories
-                </div>
-                <div class="panel-body">
-
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-
-                    <c:forEach items="${stories}" var="story">
-                        <a class="bg-primary" href="edit-story?story-id=${story.storyId}">
-                            <c:out value="${story.storyId}"/> <br>
-                        </a>
-                        <c:out value="${story.summery}"/> <br>
-
-                    </c:forEach>
-
-                </div>
-            </div>--%>
+            <div class="pull-right"><a href="#">Back to top</a></div>
         </div>
         <div class="col-lg-4">
 
@@ -90,17 +83,21 @@
 
             <div class="bs-component">
                 <div class="list-group">
-                    <a href="#" class="list-group-item active" >
+                    <a href="#" class="list-group-item active">
                         <span class="badge">14</span>
                         Horror Stories
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                 </div>
             </div>
@@ -113,11 +110,15 @@
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                 </div>
             </div>
@@ -130,32 +131,39 @@
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed
+                            diam eget risus varius blandit.</p>
                     </a>
                 </div>
             </div>
 
         </div>
-
     </div>
-
-
 </div>
 
 </body>
