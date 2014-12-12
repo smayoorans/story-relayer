@@ -20,7 +20,7 @@
                     <br>
                     <br>
 
-                    <div class="panel panel-info">
+                    <div class="panel panel-default">
                         <div class="panel-heading">Essential Information</div>
                         <div class="panel-body">
                             <div class="form-group">
@@ -57,7 +57,7 @@
 
                     <br>
 
-                    <div class="panel panel-info">
+                    <div class="panel panel-default">
                         <div class="panel-heading">Additional Information</div>
                         <div class="panel-body">
 
