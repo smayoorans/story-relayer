@@ -50,9 +50,9 @@ public class StoryController {
          String storyId = request.getParameter("story-id");
         System.out.println("story id" + storyId);
         model.addAttribute("story", storyService.findStory(storyId));
-
         return "edit-story";
     }
+
 
 
 }
