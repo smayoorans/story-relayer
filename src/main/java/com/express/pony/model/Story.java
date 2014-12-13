@@ -1,14 +1,6 @@
 package com.express.pony.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -38,7 +30,7 @@ public class Story implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     private StorySpec storySpec;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private List<StoryPart> storyParts;
 
 

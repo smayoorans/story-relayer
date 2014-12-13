@@ -1,11 +1,10 @@
 package com.express.pony.controller;
 
-import com.express.pony.model.Story;
-import com.express.pony.model.User;
-import com.express.pony.model.UserRole;
+import com.express.pony.model.*;
 import com.express.pony.service.StoryService;
 import com.express.pony.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +22,9 @@ public class StoryController {
     @Autowired
     private StoryService storyService;
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping(value = "/initiate-story", method = RequestMethod.GET)
     public String getRegistrationPage(Map<String, Object> map) {
         map.put("story", new Story());
@@ -36,15 +38,33 @@ public class StoryController {
   /*      if (bindingResult.hasErrors()) {
             return "sign-up";
         } else {*/
-//        String newStoryId = storyService.findNewStoryId();
         story.setCreatedTimeStamp((new Date()).getTime());
         storyService.initiateStory(story);
-        return "redirect:add-initial-story";
+        model.addAttribute("storyId", story.getStoryId());
+        return "add-initial-story";
     }
 
     @RequestMapping(value = "/add-initial-story", method = RequestMethod.GET)
     public String addInitialStoryPage(){
         return "add-initial-story";
+    }
+
+
+    @RequestMapping(value = "/add-initial-story-action", method = RequestMethod.POST)
+    public String addInitialStoryAction(HttpServletRequest request, Authentication authentication) {
+        String storyPart = request.getParameter("story-text");
+        Long storyId = Long.parseLong(request.getParameter("story-id"));
+
+        Story story = storyService.findStory(storyId);
+        User user = userService.findUser(authentication.getName());
+
+        StoryPart storyPartObj = new StoryPart();
+        storyPartObj.setAuthor(user);
+        storyPartObj.setPartContent(storyPart);
+        storyPartObj.setDraft(false);
+        story.addStoryPart(storyPartObj);
+        storyService.updateStory(story);
+        return "redirect:index";
     }
 
     @RequestMapping(value = "/edit-story", method = RequestMethod.GET)

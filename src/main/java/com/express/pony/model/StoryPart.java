@@ -16,6 +16,7 @@ public class StoryPart implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable=false)
 	private long storyPartID;
+    @Column(length = 4096)
 	private String partContent;
 
 	@ManyToOne

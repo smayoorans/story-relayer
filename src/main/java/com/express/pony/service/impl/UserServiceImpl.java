@@ -42,8 +42,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-    public User findUser(String userId) {
-        return userDao.findUser(userId);
+    public User findUser(String username) {
+        return userDao.findUser(username);
     }
 
 }

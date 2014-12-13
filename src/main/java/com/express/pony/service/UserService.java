@@ -18,5 +18,5 @@ public interface UserService {
 
     public String findNewUserId();
 
-    public User findUser(String userId);
+    public User findUser(String username);
 }

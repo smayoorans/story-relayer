@@ -50,10 +50,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User findUser(String userId) {
-        String hqlQuery = "from User where userId = :userId";
+    public User findUser(String username) {
+        String hqlQuery = "from User where username = :username";
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
-        query.setParameter("userId", userId);
+        query.setParameter("username", username);
         return (User) query.uniqueResult();
     }
 }

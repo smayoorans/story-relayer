@@ -76,11 +76,11 @@
                         <label for="restriction-type" class="col-sm-3 control-label">Restriction Type</label>
 
                         <div class="col-sm-9">
-                            <select class="form-control" id="restriction-type">
-                                <option>Select</option>
-                                <option>Initiate Controlled</option>
-                                <option>Non-Controlled</option>
-                            </select>
+                            <form:select class="form-control" id="restriction-type" path="storySpec.restrictionType">
+                                <c:forEach var="type" items="<%=com.express.pony.model.RestrictionType.values()%>">
+                                    <form:option value="${type}">${type}</form:option>
+                                </c:forEach>
+                            </form:select>
                         </div>
                     </div>
                     <br>

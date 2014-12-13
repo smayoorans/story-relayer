@@ -8,13 +8,32 @@
     <link href="resources/froala_editor/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="resources/froala_editor/css/froala_editor.css" rel="stylesheet" type="text/css">
     <link href="resources/froala_editor/css/froala_style.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        function readText(){
+           /* alert("Hi");
+            var story1 = document.getElementById("edit").lastChild.innerHTML;
+            alert(story1);*/
+            var wysiwygHtml = document.getElementById("edit").lastChild.childNodes.item(0).innerHTML;
+            alert(wysiwygHtml);
+
+            document.getElementById("story-text").value = wysiwygHtml;
+         /*   var story3 = document.getElementById("edit").lastChild.children.firstChild.innerHTML;
+            alert(story3);
+            var story4 = document.getElementById("edit").lastChild.innerText;
+            alert(story4);*/
+            return true;
+        }
+    </script>
+
 </head>
+
 <body>
 
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <form class="form-horizontal" role="form" method="post" action="registration-action">
+            <form class="form-horizontal" role="form" method="post" action="add-initial-story-action">
                 <div class="panel panel-default">
                     <div class="panel-heading">Write down your story content here</div>
                     <div class="panel-body">
@@ -26,11 +45,14 @@
                     </div>
                 </div>
                 <br>
+                <input type="text" hidden="hidden" id="story-text" name="story-text"/>
+                <input type="text" id="story-id" name="story-id" value="${storyId}"/>
+
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="button" class="btn btn-default">Save as Draft</button>
                         &nbsp;&nbsp;
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="submit" onclick="readText()" class="btn btn-primary">Submit</button>
                         &nbsp;&nbsp;
                         <button type="button" class="btn btn-default">Cancel</button>
                         &nbsp;
@@ -42,4 +64,5 @@
     </div>
 </div>
 </body>
+
 </html>
