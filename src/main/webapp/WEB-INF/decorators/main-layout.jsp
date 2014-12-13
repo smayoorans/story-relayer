@@ -44,19 +44,33 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome
-                        user
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setting</a>
-                        </li>
-                        <li><a href="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            Profile</a></li>
 
-                        <li class="divider"></li>
-                        <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out"
-                                                                     aria-hidden="true"></span> Logout</a></li>
-                    </ul>
+                    <sec:authorize access="isAuthenticated()">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome
+                            <sec:authentication property="principal.username"/>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setting</a>
+                            </li>
+                            <li><a href="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                Profile</a></li>
+
+                            <li class="divider"></li>
+                            <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out"
+                                                                         aria-hidden="true"></span> Logout</a></li>
+                        </ul>
+                    </sec:authorize>
+                    <sec:authorize access="isAnonymous()">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Login</a></li>
+                            <li><a href="registration"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Register</a></li>
+
+                        </ul>
+                    </sec:authorize>
+
+
                 </li>
             </ul>
         </div>
@@ -67,9 +81,10 @@
 <decorator:body/>
 
 <sec:authorize access="isAuthenticated()">
-    <p><sec:authentication property="username"/></p>
+    <%--<p><sec:authentication property="username"/></p>--%>
 
-    <p>messages</p>
+    <sec:authentication property="principal.username"/>
+
 </sec:authorize>
 
 <%@ include file="/WEB-INF/includes/footer.jsp" %>

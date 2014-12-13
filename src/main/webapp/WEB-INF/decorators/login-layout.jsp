@@ -39,15 +39,7 @@
             </ul>--%>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">
-                        <sec:authorize access="isAuthenticated()">
-                            profile
-                            messages
-                        </sec:authorize>
-                        <sec:authorize access="isAnonymous()">
-                            message
-                            <!--A Login form -->
-                        </sec:authorize> dfsdfds
+                    <a href="index" class="dropdown-toggle">
                         Already have an account
                     </a>
                 </li>

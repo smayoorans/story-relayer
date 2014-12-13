@@ -16,14 +16,14 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd">
         <!--<intercept-url pattern="/index" access="hasRole('ROLE_USER')" />-->
         <intercept-url pattern="/index" access="permitAll" />
 
-        <form-login login-page="/login"
+        <form-login login-page="/index"
                     default-target-url="/index"
-                    authentication-failure-url="/login?error=true"/>
+                    authentication-failure-url="/index?error=true"/>
 
-        <logout logout-success-url="/login" invalidate-session="true"/>
+        <logout logout-success-url="/index" invalidate-session="true"/>
 
         <anonymous username="guest" granted-authority="ROLE_GUEST"/>
-        <remember-me/>
+        <!--<remember-me/>-->
 	</http>
     <authentication-manager>
 		<authentication-provider>
