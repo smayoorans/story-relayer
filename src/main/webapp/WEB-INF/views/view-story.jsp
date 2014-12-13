@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="resources/tooltip/themes/2/tooltip.css" rel="stylesheet" type="text/css" />
+    <script src="resources/tooltip/themes/2/tooltip.js" type="text/javascript"></script>
     <title>Index</title>
 </head>
 <body>
@@ -11,21 +13,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
+
             <div class="bs-component">
-                <div class="list-group">
+                <div class="list-group"  onmouseover="tooltip.ajax(this, 'resources/tooltip/src/tooltip-ajax.jsp#div2');">
                     <a href="#" class="list-group-item active" style="background-color: #060452;">
                         Story Title <span class="pull-right">Back to Dashboard</span>
                     </a>
-                    <a href="#" class="list-group-item" data-toggle="popover" data-type="html"
-                       title="Popover title"
-                       data-content='<div class="pull-right col-lg-3">
-                    <input type="button" class="btn btn-primary btn-block" value="Fork"/>
-                </div>'>
+                    <a href="#" class="list-group-item" >
 
-                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <h4 class="list-group-item-heading">List group item heading </h4>
 
                         <p class="list-group-item-text">
-                            <img src="resources/img/bg1.png" class="img-thumbnail" align="left" style="margin: 0 10px 10px 0">
+                            <img src="resources/img/bg1.png" class="img-thumbnail" align="left" style="margin: 0 10px 10px 0" >
                             Donec id elit non mi porta gravida at eget metus. Maecenas sed
                             diam eget risus varius blandit.Lorem Ipsum is simply dummy text of the
                             printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -51,12 +50,6 @@
                             versions of Lorem Ipsum.
                         </p>
                         <br>
-                        <button type="button" class="pull-right btn btn-lg btn-danger" data-toggle="popover"
-                                title="Popover title"
-                                data-content="And here's some amazing content. It's very engaging. Right?">
-                            Click to toggle popover
-                        </button>
-
 
                         <br>
                         <br>
@@ -79,6 +72,7 @@
                     </a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
