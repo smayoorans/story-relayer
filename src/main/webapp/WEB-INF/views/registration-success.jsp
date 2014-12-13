@@ -36,7 +36,7 @@
                 <br>
                 <div class="row">
                     <div class="col-lg-4 col-lg-offset-0">
-                        <a href="#" class="btn btn-default btn-lg btn-block">Customize Setting</a>
+                        <a href="#" class="btn btn-default btn-lg btn-block">Help</a>
                     </div>
                     <div class="col-lg-4 col-lg-offset-0">
                         <a href="user-profile" class="btn btn-default btn-lg btn-block">Update your profile</a>

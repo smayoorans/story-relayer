@@ -2,7 +2,7 @@ var tooltipOptions=
 {
     showDelay: 100,
     hideDelay: 300,
-    effect: "slide",
+//    effect: "slide",
     duration: 260,
     relativeTo: "element",
     position: 1,

@@ -19,7 +19,7 @@ div#mcTooltip
 
 div#mcTooltip, div.mcTooltipInner 
 {
-    background-color:#FBF5E6;
+    background-color: #f9fff6;
 }
 
 /* For hyperlink within tooltip */

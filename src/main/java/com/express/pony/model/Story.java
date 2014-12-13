@@ -110,6 +110,20 @@ public class Story implements Serializable {
 		return Collections.unmodifiableList(storyParts);
 	}
 
+    public String getPrimeImageSrc() {
+        String primeImageTag = "";
+        if (storyParts != null) {
+            for (StoryPart storyPart : storyParts) {
+                int imagTagIdx = storyPart.getPartContent().toLowerCase().indexOf("<img");
+                if (storyPart.getPartContent().toLowerCase().indexOf("<img") > 0) {
+                    int closeImagTagIdx = storyPart.getPartContent().indexOf(">", imagTagIdx);
+                    primeImageTag = storyPart.getPartContent().substring(imagTagIdx, closeImagTagIdx + 1);
+                }
+            }
+        }
+        return primeImageTag;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Story{");

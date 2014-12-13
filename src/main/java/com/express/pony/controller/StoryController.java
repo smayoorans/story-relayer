@@ -77,13 +77,17 @@ public class StoryController {
 
 
     @RequestMapping(value = "/view-story", method = RequestMethod.GET)
-    public String showStoryViewPage(){
-              return "view-story";
+    public String showStoryViewPage(HttpServletRequest request, Model model){
+        Long storyId = Long.parseLong(request.getParameter("story-id"));
+        Story story = storyService.findStory(storyId);
+        model.addAttribute("story", story);
+        return "view-story";
     }
 
     @RequestMapping(value = "/top-rated", method = RequestMethod.GET)
     public String showTopRatedStories(){
         return "top-rated-stories";
     }
+
 
 }

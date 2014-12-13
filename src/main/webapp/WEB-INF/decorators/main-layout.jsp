@@ -81,13 +81,6 @@
 
 <decorator:body/>
 
-<sec:authorize access="isAuthenticated()">
-    <%--<p><sec:authentication property="username"/></p>--%>
-
-    <sec:authentication property="principal.username"/>
-
-</sec:authorize>
-
 <%@ include file="/WEB-INF/includes/footer.jsp" %>
 
 <script src="<c:url value="/resources/js/jquery.min.js"/>" type="text/javascript"></script>

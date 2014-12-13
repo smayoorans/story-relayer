@@ -35,7 +35,7 @@
                                 <label for="password" class="col-sm-3 control-label">Password</label>
 
                                 <div class="col-sm-6">
-                                    <form:input type="text" class="form-control" id="password" path="password"
+                                    <form:input type="password" class="form-control" id="password" path="password"
                                                 placeholder="Password"/>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                                 <label for="confirm-password" class="col-sm-3 control-label">Confirm Password</label>
 
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="confirm-password" placeholder="Confirm Password"/>
+                                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password"/>
                                 </div>
                             </div>
                             <div class="checkbox">
@@ -106,11 +106,11 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <%--<div class="form-group">
                                 <label for="profileImage" class="col-sm-3 control-label">Profile Image</label>
 
                                 <div class="col-sm-5">
-                                    <%--<input type="text" class="form-control" id="profileImage"/>--%>
+                                    &lt;%&ndash;<input type="text" class="form-control" id="profileImage"/>&ndash;%&gt;
 
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -124,7 +124,7 @@
                                         </div>
                                 </div>
                             </div>
-
+--%>
                         </div>
                     </div>
                     <div class="form-group">

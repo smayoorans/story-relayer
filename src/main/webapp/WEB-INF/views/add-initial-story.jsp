@@ -11,17 +11,8 @@
 
     <script type="text/javascript">
         function readText(){
-           /* alert("Hi");
-            var story1 = document.getElementById("edit").lastChild.innerHTML;
-            alert(story1);*/
             var wysiwygHtml = document.getElementById("edit").lastChild.childNodes.item(0).innerHTML;
-            alert(wysiwygHtml);
-
             document.getElementById("story-text").value = wysiwygHtml;
-         /*   var story3 = document.getElementById("edit").lastChild.children.firstChild.innerHTML;
-            alert(story3);
-            var story4 = document.getElementById("edit").lastChild.innerText;
-            alert(story4);*/
             return true;
         }
     </script>
@@ -46,7 +37,7 @@
                 </div>
                 <br>
                 <input type="text" hidden="hidden" id="story-text" name="story-text"/>
-                <input type="text" id="story-id" name="story-id" value="${storyId}"/>
+                <input type="text" hidden="hidden" id="story-id" name="story-id" value="${storyId}"/>
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
