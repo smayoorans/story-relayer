@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Index</title>
+    <title>Initiate Story</title>
 </head>
 <body>
 
@@ -15,56 +15,63 @@
                 <form:form class="form-horizontal" role="form" method="post" commandName="story"
                            action="initiate-action">
 
-                    <h3>Initiate Story</h3>
-                    <br>
+                    <h3>Initiate New Story</h3>
+                    <p>Please provide following details to initiate new story</p>
+                    <br/>
 
                     <div class="form-group">
-                        <label for="summery" class="col-sm-2 control-label">Story Name</label>
+                        <label for="story-name" class="col-sm-3 control-label">Story Name</label>
 
-                        <div class="col-sm-10">
-                            <form:textarea rows="1" class="form-control" id="summery" path=""/>
+                        <div class="col-sm-9">
+                            <form:input type="text" class="form-control" id="story-name" path=""/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="summery" class="col-sm-2 control-label">Gener</label>
+                        <label for="story-genre" class="col-sm-3 control-label">Genre</label>
 
-                        <div class="col-sm-10">
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="story-genre" >
+                                <option>Select</option>
+                                <option>Horror</option>
+                                <option>Fantasy</option>
+                                <option>Science Fiction</option>
+                                <option>Fable</option>
+                                <option>Romantic</option>
+                                <option>Humour</option>
                             </select>
                         </div>
                     </div>
 
 
                     <div class="form-group">
-                        <label for="summery" class="col-sm-2 control-label">Summary</label>
+                        <label for="summery" class="col-sm-3 control-label">Summary</label>
 
-                        <div class="col-sm-10">
+                        <div class="col-sm-9">
                             <form:textarea rows="3" class="form-control" id="summery" path="summery"/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="summery" class="col-sm-2 control-label">Restriction Type</label>
+                        <label for="restriction-type" class="col-sm-3 control-label">Restriction Type</label>
 
-                        <div class="col-sm-10">
-                            <select class="form-control">
+                        <div class="col-sm-9">
+                            <select class="form-control" id="restriction-type">
+                                <option>Select</option>
                                 <option>Initiate Controlled</option>
-                                <option>Non-Controlled </option>
+                                <option>Non-Controlled</option>
                             </select>
                         </div>
                     </div>
-
+                    <br>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10" name="btn_submit">
-                            <button type="button" class="btn btn-primary btn-lg">Submit</button>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Initiate Story</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-default" onclick="location.href='index'">Cancel</button>
                         </div>
                     </div>
+
                 </form:form>
             </div>
         </div>

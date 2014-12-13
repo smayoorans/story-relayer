@@ -36,8 +36,13 @@ public class UserController {
         user.setUserId(newUserId);
         userService.addUser(user);
         userService.addUserRole(new UserRole(newUserId, "R1002"));
+        System.out.println("Inserted..........................");
+        return "redirect:registration-success";
+    }
 
-        return "redirect:registration";
+    @RequestMapping(value = "/registration-success", method = RequestMethod.GET)
+    public String onRegistrationSuccess() {
+        return "registration-success";
     }
 
     @RequestMapping(value = "/user-profile", method = RequestMethod.GET)

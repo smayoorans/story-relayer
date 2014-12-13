@@ -32,36 +32,18 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="well">
-<<<<<<< HEAD
                 <form class="form-horizontal" role="form" method="post" action="registration-action">
                     <div class="panel-heading">Story Editor</div>
-=======
-                <form class="form-horizontal" role="form" method="post" action="#">
->>>>>>> origin/master
+
                     <div class="panel panel-info">
                         <div class="panel-body">
                             <div class="form-group">
-<<<<<<< HEAD
                                 <div class="col-lg-12">
                                     <textarea>Your Story</textarea>
-=======
-                                <label for="username" class="col-sm-3 control-label">Story Id</label>
-
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="username" value="${story.storyId}"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="summary" class="col-sm-3 control-label">Summary</label>
-
-                                <div class="col-sm-6">
-                                    <textarea rows="5" class="form-control" id="summary">${story.summery}</textarea>
->>>>>>> origin/master
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <br>
 
                     <div class="form-group">

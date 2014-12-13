@@ -3,6 +3,7 @@
 
 <%@taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -29,15 +30,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand active" href="#">
-                <%--<img src="resources/img/logo.png" alt="" class="logo">--%>
-                Story Relayer
-            </a>
+            <a class="navbar-brand active" href="index">Story Relayer</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <%--<ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>--%>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index">Home</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <%--<button type="submit" class="btn btn-default">Submit</button>--%>
+            </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome user
@@ -58,13 +62,13 @@
 
 <decorator:body/>
 
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Copyright &copy; 1997 - 2014 hSenid Mobile Solutions. All Rights Reserved</p>
-    </div>
-</footer>
+<sec:authorize access="isAuthenticated()">
+    <p><sec:authentication property="username"/></p>
+    <p>messages</p>
+</sec:authorize>
 
-<%--<%@ include file="/WEB-INF/includes/footer.jsp"%>--%>
+<%@ include file="/WEB-INF/includes/footer.jsp"%>
+
 <script src="<c:url value="/resources/js/jquery.min.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/bootstrap.js"/>" type="text/javascript"></script>
 
@@ -72,8 +76,6 @@
     $(function () {
         $('[data-toggle="popover"]').popover();
     });
-
-
 </script>
 
 </body>

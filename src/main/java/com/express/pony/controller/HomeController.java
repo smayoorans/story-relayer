@@ -18,14 +18,14 @@ public class HomeController {
     @Autowired
     private StoryService storyService;
 
-    @RequestMapping(value = "index", method = RequestMethod.GET)
+    @RequestMapping(value={"", "/", "index"})
     public ModelAndView defaultPage(Authentication authentication) {
 
         ModelAndView model = new ModelAndView();
-        model.addObject("title", "Spring Security Login Form - Database Authentication");
+      /*  model.addObject("title", "Spring Security Login Form - Database Authentication");
         model.addObject("message", "This is default page!");
 
-        model.addObject("stories",storyService.listStories("fg"));
+        model.addObject("stories", storyService.listStories("fg"));*/
         model.setViewName("index");
         return model;
 
@@ -43,7 +43,7 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 }

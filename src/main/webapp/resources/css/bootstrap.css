@@ -14,7 +14,7 @@ html {
 }
 body {
   margin: 0;
-  min-height: 1000px;
+  min-height: 400px;
   padding-top: 70px;
 }
 article,
@@ -3946,6 +3946,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 19px;
   line-height: 21px;
   height: 50px;
+  font-family: 'Kaushan Script', cursive;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
