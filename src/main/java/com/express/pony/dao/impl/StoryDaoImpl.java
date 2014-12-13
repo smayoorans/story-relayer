@@ -2,9 +2,11 @@ package com.express.pony.dao.impl;
 
 import com.express.pony.dao.StoryDao;
 import com.express.pony.dao.UserDao;
+import com.express.pony.model.Genre;
 import com.express.pony.model.Story;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
+
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,26 +27,38 @@ public class StoryDaoImpl implements StoryDao {
     }
 
     @Override
-    public List<Story> listStories(String username) {
-        return sessionFactory.getCurrentSession().createQuery("from Story").list();
+    public void updateStory(Story story) {
+    	sessionFactory.getCurrentSession().update(story);
+    }
+
+    @Override
+    public List<Story> listInitiatedStories(String username) {
+        Query hql = sessionFactory.getCurrentSession().createQuery("from Story st where st.initiator.username = :username");
+        hql.setParameter("username", username);
+        return hql.list();
+    }
+
+    @Override
+    public List<Story> listContributedStories(String username) {
+    	Query hql = sessionFactory.getCurrentSession().createQuery("select st from Story st inner join st.storyParts sp where sp.author.username = :username");
+        hql.setParameter("username", username);
+        return (List<Story>) hql.list();
+    }
+
+    @Override
+    public List<Story> listLatestStories(Genre genre) {
+    	Query hql = sessionFactory.getCurrentSession().createQuery("from Story st where st.genre = :genre order by createdTimeStamp desc");
+    	hql.setParameter("genre", genre);
+    	return hql.list();
     }
 
     @Override
     public void removeStory(String id) {
-
+    	// TODO later
     }
 
     @Override
-    public String findNewStoryId() {
-        Query query = sessionFactory.getCurrentSession().createQuery("select max(storyId) from Story");
-        String id = (String) query.uniqueResult();
-        String newUserId = "S1001";
-        if(id != null) newUserId = "S" + (Integer.parseInt(id.substring(1)) + 1);
-        return newUserId;
-    }
-
-    @Override
-    public Story findStory(String storyId) {
+    public Story findStory(long storyId) {
         String hqlQuery = "from Story where storyId = :storyId";
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
         query.setParameter("storyId", storyId);

@@ -1,6 +1,7 @@
 package com.express.pony.dao;
 
 
+import com.express.pony.model.Genre;
 import com.express.pony.model.Story;
 import com.express.pony.model.User;
 
@@ -8,13 +9,17 @@ import java.util.List;
 
 public interface StoryDao {
 
-    public void initiateStory(Story story);
+    void initiateStory(Story story);
 
-    public List<Story> listStories(String username);
+    void updateStory(Story story);
 
-    public void removeStory(String id);
+    List<Story> listInitiatedStories(String username);
 
-    public String findNewStoryId();
+    List<Story> listLatestStories(Genre genre);
 
-    public Story findStory(String storyId);
+    List<Story> listContributedStories(String username);
+
+    void removeStory(String id);
+
+    Story findStory(long storyId);
 }

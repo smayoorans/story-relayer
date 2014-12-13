@@ -36,12 +36,9 @@ public class StoryController {
   /*      if (bindingResult.hasErrors()) {
             return "sign-up";
         } else {*/
-        String newStoryId = storyService.findNewStoryId();
-
-        story.setCreateDate((new Date()).toString());
-        story.setStoryId(newStoryId);
+//        String newStoryId = storyService.findNewStoryId();
+        story.setCreatedTimeStamp((new Date()).getTime());
         storyService.initiateStory(story);
-
         return "redirect:add-initial-story";
     }
 
@@ -52,7 +49,7 @@ public class StoryController {
 
     @RequestMapping(value = "/edit-story", method = RequestMethod.GET)
     public String showStoryEditPage(HttpServletRequest request, Model model){
-         String storyId = request.getParameter("story-id");
+        long storyId = Long.parseLong(request.getParameter("story-id"));
         System.out.println("story id" + storyId);
         model.addAttribute("story", storyService.findStory(storyId));
         return "edit-story";

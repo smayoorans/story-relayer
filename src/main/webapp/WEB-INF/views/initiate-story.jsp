@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
                         <label for="story-name" class="col-sm-3 control-label">Story Name</label>
 
                         <div class="col-sm-9">
-                            <form:input type="text" class="form-control" id="story-name" path=""/>
+                            <form:input type="text" class="form-control" id="story-name" path="storyName"/>
                         </div>
                     </div>
 
@@ -31,24 +32,43 @@
                         <label for="story-genre" class="col-sm-3 control-label">Genre</label>
 
                         <div class="col-sm-9">
-                            <select class="form-control" id="story-genre" >
-                                <option>Select</option>
+                            <form:select class="form-control" id="story-genre" path="genre">
+                                <%--<c:forEach var="type" items="${com.express.pony.model.Genre.names}">--%>
+                                <c:forEach var="type" items="<%=com.express.pony.model.Genre.values()%>">
+                                    <form:option value="${type}">${type}</form:option>
+                                </c:forEach>
+                                <%--<option>Select</option>
+                                <option>Comedy</option>
+                                <option>Romance</option>
+                                <option>Thriller</option>
                                 <option>Horror</option>
-                                <option>Fantasy</option>
-                                <option>Science Fiction</option>
-                                <option>Fable</option>
-                                <option>Romantic</option>
-                                <option>Humour</option>
-                            </select>
+                                <option>Crime</option>--%>
+                            </form:select>
                         </div>
                     </div>
 
-
                     <div class="form-group">
-                        <label for="summery" class="col-sm-3 control-label">Summary</label>
+                        <label for="story-genre" class="col-sm-3 control-label">Language</label>
 
                         <div class="col-sm-9">
-                            <form:textarea rows="3" class="form-control" id="summery" path="summery"/>
+                            <form:select class="form-control" id="story-genre" path="language">
+                                <%--<c:forEach var="type" items="${com.express.pony.model.Genre.names}">
+                                    <form:option value="${type}">${type}</form:option>
+                                </c:forEach>--%>
+                                <option>Select</option>
+                                <option>English</option>
+                                <option>German</option>
+                                <option>French</option>
+
+                            </form:select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="summary" class="col-sm-3 control-label">Summary</label>
+
+                        <div class="col-sm-9">
+                            <form:textarea rows="3" class="form-control" id="summary" path="summary"/>
                         </div>
                     </div>
 

@@ -2,11 +2,13 @@ package com.express.pony.service.impl;
 
 import com.express.pony.dao.StoryDao;
 import com.express.pony.dao.UserDao;
+import com.express.pony.model.Genre;
 import com.express.pony.model.Story;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
 import com.express.pony.service.StoryService;
 import com.express.pony.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,22 +28,38 @@ public class StoryServiceImpl implements StoryService {
     }
 
     @Transactional
-    public List<Story> listStories(String username) {
-        return storyDao.listStories(username);
+    public void updateStory(Story story) {
+        storyDao.updateStory(story);
     }
 
-    @Transactional
-    public void removeStory(String id) {
+	@Override
+	@Transactional
+	public List<Story> listInitiatedStories(String username) {
+		return storyDao.listInitiatedStories(username);
+	}
 
-    }
 
-    @Transactional
-    public String findNewStoryId() {
-        return storyDao.findNewStoryId();
-    }
+	@Override
+	@Transactional
+	public List<Story> listLatestStories(Genre genre) {
+		return storyDao.listLatestStories(genre);
+	}
 
-    @Transactional
-    public Story findStory(String storyId) {
-        return storyDao.findStory(storyId);
-    }
+
+	@Override
+	@Transactional
+	public List<Story> listContributedStories(String username) {
+		return storyDao.listContributedStories(username);
+	}
+
+	@Override
+	public void removeStory(String id) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	@Transactional
+	public Story findStory(long storyId) {
+		return storyDao.findStory(storyId);
+	}
 }

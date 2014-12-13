@@ -1,8 +1,18 @@
 package com.express.pony.model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 @Entity
 public class Story implements Serializable {
@@ -10,49 +20,117 @@ public class Story implements Serializable {
     private static final long serialVersionUID = -6790693372846798580L;
 
     @Id
-    private String storyId;
-    private String ownerId;
-    private String title;
-    private String summery;
-    private String createDate;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long storyId;
+//    @Column(nullable = false)
+    private String storyName;
+//    @Column(nullable = false)
+    private long createdTimeStamp;
+    @ManyToOne
+    private User initiator;
+//    @Column(nullable = false)
+    private String summary;
+//    @Column(nullable = false)
+    private Genre genre;
+//    @Column(nullable = false)
+    private String language;
 
-    public String getStoryId() {
-        return storyId;
-    }
+    @OneToOne(cascade=CascadeType.ALL)
+    private StorySpec storySpec;
 
-    public void setStoryId(String storyId) {
-        this.storyId = storyId;
-    }
+    @OneToMany(cascade=CascadeType.ALL)
+    private List<StoryPart> storyParts;
 
-    public String getOwnerId() {
-        return ownerId;
-    }
 
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
-    }
+	public long getStoryId() {
+		return storyId;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public void setStoryId(long storyId) {
+		this.storyId = storyId;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public String getStoryName() {
+		return storyName;
+	}
 
-    public String getSummery() {
-        return summery;
-    }
+	public void setStoryName(String storyName) {
+		this.storyName = storyName;
+	}
 
-    public void setSummery(String summery) {
-        this.summery = summery;
-    }
+	public long getCreatedTimeStamp() {
+		return createdTimeStamp;
+	}
 
-    public String getCreateDate() {
-        return createDate;
-    }
+	public void setCreatedTimeStamp(long createdTimeStamp) {
+		this.createdTimeStamp = createdTimeStamp;
+	}
 
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
+	public User getInitiator() {
+		return initiator;
+	}
+
+	public void setInitiator(User initiator) {
+		this.initiator = initiator;
+	}
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public void setStorySpec(StorySpec storySpec) {
+		this.storySpec = storySpec;
+	}
+
+	public StorySpec getStorySpec() {
+		return storySpec;
+	}
+
+	public void setStoryParts(List<StoryPart> storyParts) {
+		this.storyParts = storyParts;
+	}
+
+	public void addStoryPart(StoryPart storyPart) {
+		storyParts.add(storyPart);
+	}
+
+	public List<StoryPart> getStoryParts() {
+		return Collections.unmodifiableList(storyParts);
+	}
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Story{");
+        sb.append("storyId=").append(storyId);
+        sb.append(", storyName='").append(storyName).append('\'');
+        sb.append(", createdTimeStamp=").append(createdTimeStamp);
+        sb.append(", initiator=").append(initiator);
+        sb.append(", summary='").append(summary).append('\'');
+        sb.append(", genre=").append(genre);
+        sb.append(", language='").append(language).append('\'');
+        sb.append(", storySpec=").append(storySpec);
+        sb.append(", storyParts=").append(storyParts);
+        sb.append('}');
+        return sb.toString();
     }
 }

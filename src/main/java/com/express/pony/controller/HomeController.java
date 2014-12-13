@@ -1,5 +1,7 @@
 package com.express.pony.controller;
 
+import com.express.pony.model.Genre;
+import com.express.pony.model.Story;
 import com.express.pony.service.StoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Controller
 public class HomeController {
 
@@ -21,12 +25,13 @@ public class HomeController {
     @RequestMapping(value={"", "/", "index"})
     public ModelAndView defaultPage(Authentication authentication) {
 
-        ModelAndView model = new ModelAndView();
-      /*  model.addObject("title", "Spring Security Login Form - Database Authentication");
-        model.addObject("message", "This is default page!");
-
-        model.addObject("stories", storyService.listStories("fg"));*/
+    	ModelAndView model = new ModelAndView();
         model.setViewName("index");
+
+
+        List<Story> horrorStoryList = storyService.listLatestStories(Genre.Romance);
+        model.addObject("horrorStoryList",horrorStoryList);
+
         return model;
 
     }

@@ -7,12 +7,12 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/story_relayer</property>
+        <property name="hibernate.connection.url">jdbc:mysql://192.168.0.240:3306/story_relayer_test</property>
         <property name="hibernate.connection.username">user</property>
         <property name="hibernate.connection.password">password</property>
 
-        <mapping class="com.express.pony.model.Role"/>
         <mapping class="com.express.pony.model.User"/>
+        <mapping class="com.express.pony.model.Role"/>
         <mapping class="com.express.pony.model.UserRole"/>
         <mapping class="com.express.pony.model.Story"/>
         <mapping class="com.express.pony.model.StorySpec"/>

@@ -99,6 +99,16 @@
                         <span class="badge">14</span>
                         <span class="glyphicon glyphicon-list" aria-hidden="true"></span>  Horror Stories
                     </a>
+                    <c:forEach var="story" items="${horrorStoryList}">
+
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">${story.storyName}</h4>
+
+                            <p class="list-group-item-text">${story.summary}</p>
+                        </a>
+                    </c:forEach>
+
+
                     <a href="#" class="list-group-item">
                         <h4 class="list-group-item-heading">List group item heading</h4>
 
