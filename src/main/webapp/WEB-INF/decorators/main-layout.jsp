@@ -44,14 +44,18 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome user
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome
+                        user
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>   Setting</a></li>
-                        <li><a href="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>   Profile</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setting</a>
+                        </li>
+                        <li><a href="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Profile</a></li>
 
                         <li class="divider"></li>
-                        <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  Logout</a></li>
+                        <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out"
+                                                                     aria-hidden="true"></span> Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -64,14 +68,36 @@
 
 <sec:authorize access="isAuthenticated()">
     <p><sec:authentication property="username"/></p>
+
     <p>messages</p>
 </sec:authorize>
 
-<%@ include file="/WEB-INF/includes/footer.jsp"%>
+<%@ include file="/WEB-INF/includes/footer.jsp" %>
 
 <script src="<c:url value="/resources/js/jquery.min.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/bootstrap.js"/>" type="text/javascript"></script>
 
+<%--<script src="resources/froala_editor/js/libs/jquery-1.11.1.min.js" type="text/javascript"></script>--%>
+<script src="resources/froala_editor/js/froala_editor.min.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+<script src="resources/froala_editor/js/froala_editor_ie8.min.js" type="text/javascript"></script>
+<![endif]-->
+<script src="resources/froala_editor/js/plugins/tables.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/lists.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/colors.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/font_family.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/font_size.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/block_styles.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/media_manager.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/video.min.js" type="text/javascript"></script>
+<script src="resources/froala_editor/js/plugins/char_counter.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#edit').editable({inlineMode: false, height: 300})
+    });
+</script>
+<%--$('#edit').editable({inlineMode: false, height: 300})--%>
 <script type="text/javascript">
     $(function () {
         $('[data-toggle="popover"]').popover();
