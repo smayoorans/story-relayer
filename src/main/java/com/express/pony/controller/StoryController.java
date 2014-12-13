@@ -64,4 +64,9 @@ public class StoryController {
               return "view-story";
     }
 
+    @RequestMapping(value = "/top-rated", method = RequestMethod.GET)
+    public String showTopRatedStories(){
+        return "top-rated-stories";
+    }
+
 }

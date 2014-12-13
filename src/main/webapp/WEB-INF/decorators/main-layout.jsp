@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index">Home</a></li>
+                <li class="active"><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; Home</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search" action="#">
                 <div class="form-group">
@@ -61,11 +61,12 @@
                         </ul>
                     </sec:authorize>
                     <sec:authorize access="isAnonymous()">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;  Get Involved
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Login</a></li>
-                            <li><a href="registration"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Register</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login</a></li>
+                            <li><a href="registration"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register</a></li>
 
                         </ul>
                     </sec:authorize>
