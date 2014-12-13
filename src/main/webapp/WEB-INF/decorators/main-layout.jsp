@@ -94,7 +94,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#edit').editable({inlineMode: false, height: 300})
+        $('#edit').editable({inlineMode: false, height: 250})
     });
 </script>
 <%--$('#edit').editable({inlineMode: false, height: 300})--%>

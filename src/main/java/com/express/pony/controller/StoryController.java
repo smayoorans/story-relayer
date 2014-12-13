@@ -42,7 +42,12 @@ public class StoryController {
         story.setStoryId(newStoryId);
         storyService.initiateStory(story);
 
-        return "redirect:index";
+        return "redirect:add-initial-story";
+    }
+
+    @RequestMapping(value = "/add-initial-story", method = RequestMethod.GET)
+    public String addInitialStoryPage(){
+        return "add-initial-story";
     }
 
     @RequestMapping(value = "/edit-story", method = RequestMethod.GET)
