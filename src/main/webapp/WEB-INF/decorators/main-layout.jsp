@@ -11,15 +11,31 @@
     <link rel="icon" href="<c:url value="/resources/img/favicon.ico"/>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Bootstrap -->
-    <link href="<c:url value="/resources/css/bootstrap.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/sticky-footer-navbar.css"/>" rel="stylesheet">
+    <!--  Boostrap Framework  -->
+    <link href="resources/HTML/assets/css/bootstrap.css" rel="stylesheet">
 
-    <%--<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>--%>
-    <%--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" type="text/javascript"></script>--%>
+    <!--=== CSS - Dragonfly ===-->
+    <link href="resources/HTML/assets/css/themes/light-blue.css" rel="stylesheet" id="colors">
+
+    <!--=== LESS - Dragonfly ===-->
+    <!--<link href="resources/HTML/assets/less/main.less" rel="stylesheet/less">-->
+
+    <!-- Google Fonts - Lato -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- CSS Animations -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet">
+
+    <!--  Slippry Slideshow -->
+    <link href="resources/HTML/assets/css/slippry.min.css" rel="stylesheet">
     <decorator:head/>
 </head>
 <body>
+<%@ include file="/WEB-INF/includes/nav-bar.jsp" %>
+<%--
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -40,7 +56,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <%--<button type="submit" class="btn btn-default">Submit</button>--%>
+                &lt;%&ndash;<button type="submit" class="btn btn-default">Submit</button>&ndash;%&gt;
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -78,15 +94,70 @@
         <!--/.nav-collapse -->
     </div>
 </nav>
+--%>
 
 <decorator:body/>
 
 <%@ include file="/WEB-INF/includes/footer.jsp" %>
 
+<!--===    SCRIPTS     ===-->
+
+<!--Back to top-->
+<a href="#" class="back-to-top">
+    <i class="fa fa-angle-up"></i>
+</a>
+
+<!-- Modernizr -->
+<script src="resources/HTML/assets/js/min/modernizr.custom.min.js" type="text/javascript"></script>
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap JS -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap Plugin - open dropdown on hover -->
+<script src="resources/HTML/assets/js/min/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+
+<!-- LESS preprocessor -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.4/less.min.js" type="text/javascript"></script>
+
+<!-- WOW.js - loading animations -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/wow/0.1.6/wow.min.js" type="text/javascript"></script>
+
+<!-- Knobs - our skills -->
+<script src="http://cdn.jsdelivr.net/jquery.knob/1.2.9/jquery.knob.min.js" type="text/javascript"></script>
+
+<!-- Slippry - Slideshow -->
+<script src="resources/HTML/assets/js/min/slippry.min.js" type="text/javascript"></script>
+
+<!-- Mixitup plugin - Portfolio Filter Grid -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mixitup/1.5.6/jquery.mixitup.min.js" type="text/javascript"></script>
+
+<!-- Make sticky whatever elements -->
+<script src="http://cdn.jsdelivr.net/jquery.sticky/1.0.0/jquery.sticky.min.js" type="text/javascript"></script>
+
+<!-- Smooth sroll -->
+<script src="http://cdn.jsdelivr.net/jquery.nicescroll/3.5.4/jquery.nicescroll.min.js" type="text/javascript"></script>
+
+<!-- Contact Form -->
+<script src="resources/HTML/assets/js/min/contact-form.min.js" type="text/javascript"></script>
+
+<!-- Must be last of all scripts -->
+<script src="resources/HTML/assets/js/min/scripts.min.js" type="text/javascript"></script>
+
+<!--[if lt IE 9]>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!--===/END    SCRIPTS     ===-->
+<%--
 <script src="<c:url value="/resources/js/jquery.min.js"/>" type="text/javascript"></script>
 <script src="<c:url value="/resources/js/bootstrap.js"/>" type="text/javascript"></script>
 
-<%--<script src="resources/froala_editor/js/libs/jquery-1.11.1.min.js" type="text/javascript"></script>--%>
+&lt;%&ndash;<script src="resources/froala_editor/js/libs/jquery-1.11.1.min.js" type="text/javascript"></script>&ndash;%&gt;
 <script src="resources/froala_editor/js/froala_editor.min.js" type="text/javascript"></script>
 <!--[if lt IE 9]>
 <script src="resources/froala_editor/js/froala_editor_ie8.min.js" type="text/javascript"></script>
@@ -106,12 +177,13 @@
         $('#edit').editable({inlineMode: false, height: 250})
     });
 </script>
-<%--$('#edit').editable({inlineMode: false, height: 300})--%>
+&lt;%&ndash;$('#edit').editable({inlineMode: false, height: 300})&ndash;%&gt;
 <script type="text/javascript">
     $(function () {
         $('[data-toggle="popover"]').popover();
     });
 </script>
+--%>
 
 </body>
 </html>
