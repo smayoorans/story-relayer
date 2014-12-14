@@ -6,7 +6,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Welcome to Dragonfly | Multipurpose Bootstrap Template</title>
+    <title>Story Title</title>
 
 </head>
 
@@ -288,19 +288,6 @@
 
 </section>
 <!--===/END    MAIN WRAP     ===-->
-
-
-<!--===    SCRIPTS     ===-->
-
-<!--Back to top-->
-<a href="#" class="back-to-top">
-    <i class="fa fa-angle-up"></i>
-</a>
-
-
-
-
-
 </body>
 
 </html>

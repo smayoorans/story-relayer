@@ -1,378 +1,246 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<jsp:useBean id="dateValue" class="java.util.Date"/>
-<jsp:setProperty name="dateValue" property="time" value="${story.createdTimeStamp}"/>
-
 <!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="js-no ie9"> <![endif]-->
+<!--[if IE 10]> <html lang="en" class="js-no ie10"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+<!--<![endif]-->
+
 <head>
-    <title>Story Relayer</title>
+    <title>Welcome to Story Relayer</title>
 </head>
+
 <body>
 
-<div class="container">
+<!--===    HEADER     ===-->
+<section class="bg-7 bg-centerTop70 bg-cover">
+    <div class="bg-filter sTop">
+        <div class="container" style="margin-top: -60px;">
+            <div class="jumbotron trn v-center">
+                <h1 class="wow fadeInUp" data-wow-delay="0.1s">Welcome to Story Relayer</h1>
 
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>Welcome to Story Relayer!</h3>
+                <div class="space-sm"></div>
+                <p class="wow fadeInUp" data-wow-delay="0.2s">Story Relayer is a web application
+                    <br>designed to support collaborative writing of non-linear stories in any language.</p>
 
-                    <p class="">
-                        Story Relayer is a web application designed to support
-                        collaborative writing of non-linear stories in any language.
-                        With Novlet you will be able to read stories written by other users,
-                        create your own ones, and choose the plot you like most from several alternatives.
-                    </p>
-                </div>
+                <div class="space-sm"></div>
+                <ul class="list-inline wow fadeInUp" data-wow-delay="0.3s">
+                    <li>
+                        <a href="#top-rated-stories" class="btn btn-default-trn btn-xlg scroll"><i
+                                class="fa fa-bolt"></i>
+                            Get Involved</a>
+                    </li>
+                    <li>
+                        <a href="#learn-more" class="btn btn-primary btn-xlg scroll"><i class="fa fa-paper-plane-o"></i>
+                            Browse Stories</a>
+                    </li>
+                </ul>
             </div>
-
-            <div class="bs-component">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active" style="background-color: #c4074c;">
-                        <span class="badge">92</span>
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Top Rated Stories
-                    </a>
-                    <c:forEach var="story" items="${topRatedStoryList}">
-
-                        <a href="view-story?story-id=${story.storyId}" class="list-group-item">
-                            <h4 class="list-group-item-heading" style="color:#003cb3">${story.storyName}</h4>
-
-                            <p class="list-group-item-text">
-                                <img src="<c:url value="${story.primeImageSrc}"/>" align="left" class="img-thumbnail img1">
-                                    ${story.summary}</p>
-                            <small>Create by <span style="color: #2780e3">${story.initiator.username}</span>,
-                                <cite><fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/> </cite></small>
-                            &nbsp;
-                            <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                            <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                            <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                            <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                            <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        </a>
-                    </c:forEach>
-
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-
-                </div>
-            </div>
-            <div class="pull-right"><a href="#">Back to top</a></div>
         </div>
-        <div class="col-lg-4">
+    </div>
+</section>
+<!--===/END      HEADER     ===-->
 
-            <div class="well">
-                <a class="btn btn-primary btn-block btn-lg" href="initiate-story" role="button">Initiate New Story </a>
-            </div>
+<!--===    MAIN WRAP     ===-->
+<!-- Our works/ projects section -->
+<div id="learn-more"></div>
+<section class="section-lg">
+    <div class="container">
 
-            <div class="bs-component">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <span class="badge">14</span>
-                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Horror Stories
+        <h2 class="lg-title lg-title-border">Browse Stories</h2>
+
+        <ul class="filter-tabs">
+            <li class="filter active" data-filter="mix"><span>All</span>
+            </li>
+            <li class="filter" data-filter="apps"><span>Application</span>
+            </li>
+            <li class="filter" data-filter="devices"><span>Devices</span>
+            </li>
+            <li class="filter" data-filter="web"><span>Webdesign</span>
+            </li>
+        </ul>
+
+        <ul class="row  filter-grid-v2" id="Grid">
+            <!-- Item 1 -->
+            <li class="col-md-4 col-sm-6 mix devices ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.5s">
+                        <img src="resources/HTML/assets/img/sign-up-sketch.jpg" class="img-responsive"
+                             alt="Portfolio - application">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i> Some thing here
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!-- mix - select all, devices - filter only devices -->
+
+            <!-- Item 2 -->
+            <li class="col-md-4 col-sm-6 mix apps web ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.25s">
+                        <img src="resources/HTML/assets/img/minimal-wireframe-assets.jpg" class="img-responsive"
+                             alt="Websites Layout">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Item 3 -->
+            <li class="col-md-4 col-sm-6 mix apps ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.75s">
+                        <img src="resources/HTML/assets/img/App-Preview.jpg" class="img-responsive"
+                             alt="Portfolio - application">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Item 4 -->
+            <li class="col-md-4 col-sm-6 mix devices ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.6s">
+                        <img src="resources/HTML/assets/img/macbook.jpg" class="img-responsive" alt="Apple Macbook Pro">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Item 5 -->
+            <li class="col-md-4 col-sm-6 mix web ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.35s">
+                        <img src="resources/HTML/assets/img/webdesign.jpg" class="img-responsive" alt="Webdesign">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <!-- Item 6 -->
+            <li class="col-md-4 col-sm-6 mix apps ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.85s">
+                        <img src="resources/HTML/assets/img/app-screen.jpg" class="img-responsive" alt="application">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</section>
+
+
+<section class="bg-9 bg-center bg-fixed">
+    <h5 class="sr-only">Photo of Macbook Pro</h5>
+
+    <div class="filling-section bg-filter-v1"></div>
+</section>
+
+<div id="top-rated-stories"></div>
+<!-- Breaking news -->
+<section class="section">
+    <div class="container">
+        <h2 class="lg-title lg-title-border">Top Rated Stories</h2>
+
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/011.jpg" alt="camera">
+
+                    <h3>Post title</h3>
+                    <em>January 26, 2014 by John</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
                     </a>
-                    <c:forEach var="story" items="${horrorStoryList}">
-
-                        <a href="view-story?story-id=${story.storyId}" class="list-group-item">
-                            <h4 class="list-group-item-heading">${story.storyName}</h4>
-
-                            <p class="list-group-item-text">${story.summary}</p>
-                        </a>
-                    </c:forEach>
-
-
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
                 </div>
             </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.6s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/31f6.JPG" alt="macbook">
 
-            <div class="bs-component">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active" style="background-color: #1c6c04;">
-                        <span class="badge">56</span>
-                        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Fantasy Stories
+                    <h3>Post title</h3>
+                    <em>January 10, 2014 by Ben</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
                     </a>
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.4s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/picjumbo.com.jpg" alt="devices">
 
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                    <h3>Post title</h3>
+                    <em>December 27, 2013 by Nicole</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
                     </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/macbook-air.jpg" alt="macbook">
 
-                    <a href="view-story" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
+                    <h3>Post title</h3>
+                    <em>December 13, 2013 by Adele</em>
 
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
                     </a>
-
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading" style="color:#003cb3">List group item heading</h4>
-
-                        <p class="list-group-item-text">
-                            <img src="<c:url value="/resources/img/bg1.png"/>" align="left"
-                                 class="img-thumbnail img1">
-                            Donec id elit non mi porta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit. orta gravida at eget metus. Maecenas sed
-                            diam eget risus varius blandit.</p>
-                        <small>Create by <span style="color: #2780e3">smayoorans</span>, <cite> 23/12/2013
-                            12:33PM</cite></small>
-                        &nbsp;
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                    </a>
-
                 </div>
             </div>
 
         </div>
     </div>
-</div>
+</section>
+<!--===/END    MAIN WRAP     ===-->
 
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-            <form class="form-horizontal" role="form" method="post" action="j_spring_security_check">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Provide your credentials</h4>
-                </div>
-                <div class="modal-body">
-
-
-                    <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">Username</label>
-
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="username" name="j_username"
-                                   placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-2 control-label">Password</label>
-
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="j_password"
-                                   placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="registration">To Register</a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 </body>
+
 </html>
