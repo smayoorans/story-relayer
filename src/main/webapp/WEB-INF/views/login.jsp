@@ -18,16 +18,16 @@
 
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                        <form role="form" class="icon">
+                        <form role="form" class="icon" method="post" action="j_spring_security_check">
                             <div class="form-group ">
                                 <div class="control">
-                                    <input type="email" class="form-control" placeholder="Email" required>
+                                    <input type="text" class="form-control" placeholder="Username" name="j_username" required>
                                     <i class="fa fa-envelope"></i>
                                 </div>
                             </div>
                             <div class="form-group ">
                                 <div class="control">
-                                    <input type="password" class="form-control" placeholder="Password" required>
+                                    <input type="password" class="form-control" placeholder="Password" name="j_password" required>
                                     <i class="fa fa-lock"></i>
                                 </div>
                             </div>

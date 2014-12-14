@@ -37,67 +37,27 @@
     <decorator:head/>
 </head>
 <body>
+<script type="text/javascript">(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript">
+    !function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');
+</script>
+
+
 <%@ include file="/WEB-INF/includes/nav-bar.jsp" %>
-<%--
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand active" href="index">Story Relayer</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; Home</a></li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search" action="#">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                &lt;%&ndash;<button type="submit" class="btn btn-default">Submit</button>&ndash;%&gt;
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-
-                    <sec:authorize access="isAuthenticated()">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome
-                            <sec:authentication property="principal.username"/>
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setting</a>
-                            </li>
-                            <li><a href="user-profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                Profile</a></li>
-
-                            <li class="divider"></li>
-                            <li><a href="j_spring_security_logout"><span class="glyphicon glyphicon-log-out"
-                                                                         aria-hidden="true"></span> Logout</a></li>
-                        </ul>
-                    </sec:authorize>
-                    <sec:authorize access="isAnonymous()">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;  Get Involved
-                            <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Login</a></li>
-                            <li><a href="registration"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register</a></li>
-
-                        </ul>
-                    </sec:authorize>
-
-
-                </li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</nav>
---%>
 
 <decorator:body/>
 
