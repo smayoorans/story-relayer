@@ -7,6 +7,7 @@ import com.express.pony.model.Story;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class StoryDaoImpl implements StoryDao {
 
     @Override
     public void updateStory(Story story) {
-    	sessionFactory.getCurrentSession().update(story);
+        sessionFactory.getCurrentSession().update(story);
     }
 
     @Override
@@ -40,21 +41,29 @@ public class StoryDaoImpl implements StoryDao {
 
     @Override
     public List<Story> listContributedStories(String username) {
-    	Query hql = sessionFactory.getCurrentSession().createQuery("select st from Story st inner join st.storyParts sp where sp.author.username = :username");
+        Query hql = sessionFactory.getCurrentSession().createQuery("select st from Story st inner join st.storyParts sp where sp.author.username = :username");
         hql.setParameter("username", username);
         return (List<Story>) hql.list();
     }
 
     @Override
     public List<Story> listLatestStories(Genre genre) {
-    	Query hql = sessionFactory.getCurrentSession().createQuery("from Story st where st.genre = :genre order by createdTimeStamp desc");
-    	hql.setParameter("genre", genre);
-    	return hql.list();
+        Query hql = sessionFactory.getCurrentSession().createQuery("from Story st where st.genre = :genre order by createdTimeStamp desc");
+        hql.setParameter("genre", genre);
+        return hql.list();
     }
 
     @Override
-    public void removeStory(String id) {
-    	// TODO later
+    public boolean removeStory(Long id) {
+        try {
+            User user = (User) sessionFactory.getCurrentSession().load(User.class, id);
+            if (null != user) {
+                sessionFactory.getCurrentSession().delete(user);
+                return true;
+            } else return false;
+        } catch (HibernateException e) {
+            return false;
+        }
     }
 
     @Override

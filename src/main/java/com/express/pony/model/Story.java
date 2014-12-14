@@ -121,7 +121,11 @@ public class Story implements Serializable {
                 }
             }
         }
-        return primeImageTag;
+
+        String srcAttr = "src=\"";
+        int idxSrcAttr = primeImageTag.indexOf(srcAttr);
+        int idxEndSrcAttr = primeImageTag.indexOf("\"", idxSrcAttr + srcAttr.length());
+        return primeImageTag.substring(idxSrcAttr + srcAttr.length(), idxEndSrcAttr);
     }
 
     @Override

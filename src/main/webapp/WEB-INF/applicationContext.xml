@@ -22,11 +22,11 @@
     <!--we will be using annotation driven handler mapping-->
     <mvc:annotation-driven/>
 
-    <!--<bean id="userValidator" class="com.guru.mayoo.validator.UserValidator" />-->
+    <bean id="userValidator" class="com.express.pony.validator.RegistrationValidator" />
 
     <!--localization and internationalization starts here -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="registration" />
+        <property name="basename" value="message" />
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
 

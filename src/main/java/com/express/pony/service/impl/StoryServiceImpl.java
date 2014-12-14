@@ -21,12 +21,13 @@ public class StoryServiceImpl implements StoryService {
 	@Autowired
 	private StoryDao storyDao;
 
-
+	@Override
     @Transactional
     public void initiateStory(Story story) {
         storyDao.initiateStory(story);
     }
 
+	@Override
     @Transactional
     public void updateStory(Story story) {
         storyDao.updateStory(story);
@@ -53,8 +54,9 @@ public class StoryServiceImpl implements StoryService {
 	}
 
 	@Override
-	public void removeStory(String id) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public boolean removeStory(Long id) {
+		return storyDao.removeStory(id);
 	}
 
 	@Override

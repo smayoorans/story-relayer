@@ -19,7 +19,7 @@ public interface StoryDao {
 
     List<Story> listContributedStories(String username);
 
-    void removeStory(String id);
+    boolean removeStory(Long id);
 
     Story findStory(long storyId);
 }

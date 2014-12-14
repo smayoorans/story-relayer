@@ -90,4 +90,14 @@ public class StoryController {
     }
 
 
+    @RequestMapping(value = "/delete-story", method = RequestMethod.GET)
+    public String deleteStory(HttpServletRequest request, Model model){
+        Long storyId = Long.parseLong(request.getParameter("story-id"));
+        System.out.println("Long .." + storyId);
+        boolean isDeleted = storyService.removeStory(storyId);
+        System.out.println("booo" + isDeleted);
+//        model.addAttribute("story", story);
+        return "top-rated-stories";
+    }
+
 }

@@ -6,7 +6,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 import com.express.pony.model.User;
 
-public class RegistrationValidator implements Validator{
+public class RegistrationValidator implements Validator {
     @Override
 
     public boolean supports(Class clazz) {
@@ -17,25 +17,12 @@ public class RegistrationValidator implements Validator{
     @Override
     public void validate(Object target, Errors errors) {
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName",
-                "required.firstName", "First name is required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "required.username", "Field is required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "required.password", "Field is required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "displayName", "required.displayName", "Field is required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailAddress", "required.emailAddress", "Field is required");
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "displayName",
-                "required.displayName", "Login Name is required");
+        User user = (User) target;
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailAddress",
-                "required.emailAddress", "Email Address is required");
-
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",
-                "required.password", "Password is required");
-
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword",
-                "required.confirmPassword", "Confirm Password required");
-
-        User reg = (User)target;
-
-        if("NONE".equals(reg.getFavCategory())){
-            errors.rejectValue("favCatogery", "required.favCatogery");
-        }
     }
 }

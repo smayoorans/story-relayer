@@ -40,7 +40,7 @@
                             <h4 class="list-group-item-heading" style="color:#003cb3">${story.storyName}</h4>
 
                             <p class="list-group-item-text">
-                                <img src="<c:url value="/resources/img/bg1.png"/>" align="left" class="img-thumbnail img1">
+                                <img src="<c:url value="${story.primeImageSrc}"/>" align="left" class="img-thumbnail img1">
                                     ${story.summary}</p>
                             <small>Create by <span style="color: #2780e3">${story.initiator.username}</span>,
                                 <cite><fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/> </cite></small>

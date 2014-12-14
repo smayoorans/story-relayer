@@ -4,7 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Story Relayer</title>
+    <title>Registration</title>
+    <style>
+        .error {
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,6 +34,7 @@
                                 <div class="col-sm-5">
                                     <form:input type="text" class="form-control" id="username" path="username"
                                                 placeholder="Username"/>
+                                    <form:errors cssClass="help-block error" path="username"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -39,13 +45,13 @@
                                                 placeholder="Password"/>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="confirm-password" class="col-sm-3 control-label">Confirm Password</label>
+                                <%--<div class="form-group">
+                                    <label for="confirm-password" class="col-sm-3 control-label">Confirm Password</label>
 
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password"/>
-                                </div>
-                            </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password"/>
+                                    </div>
+                                </div>--%>
                             <div class="checkbox">
                                 <label class="col-sm-offset-3 col-sm-10">
                                     <input type="checkbox"> I accept terms and conditions
@@ -76,6 +82,7 @@
                                 <div class="col-sm-7">
                                     <form:input type="text" class="form-control" id="firstName" path="firstName"
                                                 placeholder="First Name"/>
+                                    <form:errors cssClass="help-block error" path="firstName"/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -106,25 +113,25 @@
                                 </div>
                             </div>
 
-                            <%--<div class="form-group">
-                                <label for="profileImage" class="col-sm-3 control-label">Profile Image</label>
+                                <%--<div class="form-group">
+                                    <label for="profileImage" class="col-sm-3 control-label">Profile Image</label>
 
-                                <div class="col-sm-5">
-                                    &lt;%&ndash;<input type="text" class="form-control" id="profileImage"/>&ndash;%&gt;
+                                    <div class="col-sm-5">
+                                        &lt;%&ndash;<input type="text" class="form-control" id="profileImage"/>&ndash;%&gt;
 
-                                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                <img data-src="holder.js/100%x100%" alt="...">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                    <img data-src="holder.js/100%x100%" alt="...">
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
+                                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                                </div>
                                             </div>
-                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-                                            <div>
-                                                <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-                                                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                            </div>
-                                        </div>
+                                    </div>
                                 </div>
-                            </div>
---%>
+    --%>
                         </div>
                     </div>
                     <div class="form-group">
