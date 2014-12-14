@@ -41,21 +41,104 @@
 <!--===/END      HEADER     ===-->
 
 <!--===    MAIN WRAP     ===-->
+
+<div id="top-rated-stories"></div>
+<!-- Breaking news -->
+<section class="section">
+    <div class="container">
+        <h2 class="lg-title lg-title-border">Top Rated Stories <a href="top-rated" class=" pull-right btn btn-primary scroll">
+            <i class="fa fa-paper-plane-o"></i>Browse More</a></h2>
+
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/011.jpg" alt="camera">
+
+                    <h3>Post title</h3>
+                    <em>January 26, 2014 by John</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.6s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/31f6.JPG" alt="macbook">
+
+                    <h3>Post title</h3>
+                    <em>January 10, 2014 by Ben</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.4s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/picjumbo.com.jpg" alt="devices">
+
+                    <h3>Post title</h3>
+                    <em>December 27, 2013 by Nicole</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="news">
+                    <img class="img-responsive" src="resources/HTML/assets/img/768w/macbook-air.jpg" alt="macbook">
+
+                    <h3>Post title</h3>
+                    <em>December 13, 2013 by Adele</em>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
+                        rutrum. In enim a arcu imperdiet malesuada.</p>
+                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
+                        <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="bg-9 bg-center bg-fixed">
+    <h5 class="sr-only">Photo of Macbook Pro</h5>
+
+    <div class="filling-section bg-filter-v1"></div>
+</section>
+
 <!-- Our works/ projects section -->
 <div id="learn-more"></div>
 <section class="section-lg">
     <div class="container">
 
-        <h2 class="lg-title lg-title-border">Browse Stories</h2>
+        <h2 class="lg-title lg-title-border">Browse Stories <a href="top-rated" class=" pull-right btn btn-primary scroll">
+            <i class="fa fa-paper-plane-o"></i>Browse More</a></h2>
 
         <ul class="filter-tabs">
             <li class="filter active" data-filter="mix"><span>All</span>
             </li>
-            <li class="filter" data-filter="apps"><span>Application</span>
+            <li class="filter" data-filter="apps"><span>Horror</span>
             </li>
-            <li class="filter" data-filter="devices"><span>Devices</span>
+            <li class="filter" data-filter="devices"><span>Romance</span>
             </li>
-            <li class="filter" data-filter="web"><span>Webdesign</span>
+            <li class="filter" data-filter="action"><span>Action</span>
+            </li>
+            <li class="filter" data-filter="adventure"><span>Adventure</span>
+            </li>
+            <li class="filter" data-filter="comedy"><span>Comedy</span>
+            </li>
+            <li class="filter" data-filter="crime"><span>Crime</span>
             </li>
         </ul>
 
@@ -159,87 +242,58 @@
                     </div>
                 </a>
             </li>
+
+            <!-- Item 7 -->
+            <li class="col-md-4 col-sm-6 mix crime ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.85s">
+                        <img src="resources/HTML/assets/img/app-screen.jpg" class="img-responsive" alt="application">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!-- Item 7 -->
+            <li class="col-md-4 col-sm-6 mix crime ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.85s">
+                        <img src="resources/HTML/assets/img/app-screen.jpg" class="img-responsive" alt="application">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!-- Item 7 -->
+            <li class="col-md-4 col-sm-6 mix crime ">
+                <a href="portfolio-item-v2.html" title="View portfolio item">
+                    <div class="hover-content wow easeUp" data-wow-delay="0.85s">
+                        <img src="resources/HTML/assets/img/app-screen.jpg" class="img-responsive" alt="application">
+
+                        <div class="top-part hidden-xs">
+                            <i class="fa fa-eye"></i>
+                        </div>
+                        <div class="bottom-part hidden-xs">
+                            <h3>Some Title</h3>
+                        </div>
+                    </div>
+                </a>
+            </li>
         </ul>
 
     </div>
 </section>
 
-
-<section class="bg-9 bg-center bg-fixed">
-    <h5 class="sr-only">Photo of Macbook Pro</h5>
-
-    <div class="filling-section bg-filter-v1"></div>
-</section>
-
-<div id="top-rated-stories"></div>
-<!-- Breaking news -->
-<section class="section">
-    <div class="container">
-        <h2 class="lg-title lg-title-border">Top Rated Stories</h2>
-
-        <div class="row">
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/011.jpg" alt="camera">
-
-                    <h3>Post title</h3>
-                    <em>January 26, 2014 by John</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.6s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/31f6.JPG" alt="macbook">
-
-                    <h3>Post title</h3>
-                    <em>January 10, 2014 by Ben</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.4s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/picjumbo.com.jpg" alt="devices">
-
-                    <h3>Post title</h3>
-                    <em>December 27, 2013 by Nicole</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/macbook-air.jpg" alt="macbook">
-
-                    <h3>Post title</h3>
-                    <em>December 13, 2013 by Adele</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
 <!--===/END    MAIN WRAP     ===-->
-
 
 </body>
 

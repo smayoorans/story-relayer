@@ -1,59 +1,80 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="js-no ie9"> <![endif]-->
+<!--[if IE 10]> <html lang="en" class="js-no ie10"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+<!--<![endif]-->
 <head>
     <title>Login</title>
 </head>
 <body>
+<!--===    MAIN WRAP     ===-->
+<section class="bg-6 bg-center bg-cover  section-fxd">
+    <div class="bg-filter">
+        <div class="hv-center">
+            <div class="sign-up">
+                <div class="sign-up-hr hidden-xs"></div>
+                <h1 class="sign-up-title">Sign In</h1>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="well">
-                <form class="form-horizontal" role="form" method="post" action="j_spring_security_check">
-
-                    <h4>Provide your credentials</h4>
-                    <br>
-
-                    <div class="form-group">
-                        <label for="username" class="col-sm-2 control-label">Username</label>
-
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="username" name="j_username"
-                                   placeholder="Username">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-2 control-label">Password</label>
-
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="j_password"
-                                   placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <form role="form" class="icon">
+                            <div class="form-group ">
+                                <div class="control">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                    <i class="fa fa-envelope"></i>
+                                </div>
                             </div>
-                        </div>
+                            <div class="form-group ">
+                                <div class="control">
+                                    <input type="password" class="form-control" placeholder="Password" required>
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-check"></i>Login to your account
+                            </button>
+                            <div class="space visible-sm visible-xs"></div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                            &nbsp;
-                            <button type="button" class="btn btn-default" onclick="location.href='index'">Cancel</button>
-                        </div>
+                    <div class="col-md-6 col-sm-6">
+                        <a href="#" title=" Sing in with Google">
+                            <div class="sign-up-btn google">
+                                <div class="icon" style="padding-top: 10px;">
+                                    <i class="fa fa-google-plus"></i>
+                                </div>
+                                <div class="text">
+                                    Sing in with Google
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" title=" Sing in with Facebook">
+                            <div class="sign-up-btn facebook">
+                                <div class="icon" style="padding-top: 10px;">
+                                    <i class="fa fa-facebook"></i>
+                                </div>
+                                <div class="text">
+                                    Sing in with Facebook
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" title=" Sing in with Twitter">
+                            <div class="sign-up-btn twitter">
+                                <div class="icon" style="padding-top: 10px;">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <div class="text">
+                                    Sing in with Twitter
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+</section>
+<!--===/END    MAIN WRAP     ===-->
 </body>
 </html>

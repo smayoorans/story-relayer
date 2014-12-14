@@ -1,5 +1,5 @@
 <!--===    NAVBAR     ===-->
-<nav class="navbar navbar-default" role="navigation" id="navbarSettings">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbarSettings">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
