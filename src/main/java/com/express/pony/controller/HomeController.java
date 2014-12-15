@@ -30,6 +30,7 @@ public class HomeController {
 
         List<Story> horrorStoryList = storyService.listLatestStories(Genre.Romance);
         List<Story> topRatedStoryList = storyService.listContributedStories("mayoo");
+        model.addObject("story", new Story());
         model.addObject("topRatedStoryList",topRatedStoryList);
         model.addObject("horrorStoryList",horrorStoryList);
 

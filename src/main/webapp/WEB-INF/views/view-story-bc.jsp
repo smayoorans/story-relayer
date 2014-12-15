@@ -27,8 +27,8 @@
 
                         <p class="list-group-item-text">
                             <c:forEach var="st" items="${story.storyParts}">
-                                <c:out value="${st.partContent}"  escapeXml="false"/>
-                            </c:forEach>
+                            <c:out value="${st.partContent}"  escapeXml="false"/>
+                        </c:forEach>
                         </p>
                         <br>
                         <br>

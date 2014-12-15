@@ -132,7 +132,6 @@
         $('#edit').editable({inlineMode: false, height: 300})
     });
 </script>
-
 <!-- Must be last of all scripts -->
 <script src="resources/HTML/assets/js/min/scripts.min.js" type="text/javascript"></script>
 

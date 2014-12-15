@@ -20,7 +20,7 @@ public class Story implements Serializable {
     private long createdTimeStamp;
     @ManyToOne
     private User initiator;
-//    @Column(nullable = false)
+	@Column(length = 4096)
     private String summary;
 //    @Column(nullable = false)
     private Genre genre;
