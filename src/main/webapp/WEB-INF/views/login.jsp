@@ -45,7 +45,7 @@
                                     <i class="fa fa-google-plus"></i>
                                 </div>
                                 <div class="text">
-                                    Sing in with Google
+                                    Sign in with Google
                                 </div>
                             </div>
                         </a>
@@ -55,7 +55,7 @@
                                     <i class="fa fa-facebook"></i>
                                 </div>
                                 <div class="text">
-                                    Sing in with Facebook
+                                    Sign in with Facebook
                                 </div>
                             </div>
                         </a>
@@ -65,7 +65,7 @@
                                     <i class="fa fa-twitter"></i>
                                 </div>
                                 <div class="text">
-                                    Sing in with Twitter
+                                    Sign in with Twitter
                                 </div>
                             </div>
                         </a>

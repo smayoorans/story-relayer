@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="js-no ie9"> <![endif]-->
@@ -29,13 +30,16 @@
 
                 <div class="space-sm"></div>
                 <ul class="list-inline wow fadeInUp" data-wow-delay="0.3s">
+                    <security:authorize access="isAuthenticated()">
+                        <li>
+                            <a href="#get-started" class="btn btn-default-trn btn-xlg scroll"><i class="fa fa-bolt"></i>
+                                Initiate Story
+                            </a>
+                        </li>
+                    </security:authorize>
                     <li>
-                        <a href="#get-started" class="btn btn-default-trn btn-xlg scroll"><i class="fa fa-bolt"></i>
-                            Initiate Story
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#top-rated-stories" class="btn btn-primary btn-xlg scroll"><i class="fa fa-paper-plane-o"></i>
+                        <a href="#top-rated-stories" class="btn btn-primary btn-xlg scroll"><i
+                                class="fa fa-paper-plane-o"></i>
                             Browse Stories
                         </a>
                     </li>
@@ -73,6 +77,12 @@
                         <em><fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
                             by <b><c:out value="${story.initiator.displayName}"/></b>
                         </em>
+                        &nbsp;
+                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
 
                         <p>${story.summary}</p>
                         <a href="view-story?story-id=${story.storyId}" class="btn btn-primary-trn">Read more
@@ -270,7 +280,7 @@
 </section>
 
 
-<section class="bg-8 bg-center bg-fixed">
+<section class="bg-19 bg-center bg-fixed">
     <h5 class="sr-only">Photo of Macbook Pro</h5>
 
     <div class="filling-section bg-filter-v1"></div>

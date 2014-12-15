@@ -5847,3 +5847,7 @@ button.close {
         display: none !important;
     }
 }
+
+.star-rate{
+    width: 10px;
+}

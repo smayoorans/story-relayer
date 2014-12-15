@@ -82,11 +82,26 @@ public class StoryController {
 
     @RequestMapping(value = "/view-story", method = RequestMethod.GET)
     public String showStoryViewPage(HttpServletRequest request, Model model){
-//        Long storyId = Long.parseLong(request.getParameter("story-id"));
-        Long storyId = Long.parseLong("2");
+        Long storyId = Long.parseLong(request.getParameter("story-id"));
         Story story = storyService.findStory(storyId);
         model.addAttribute("story", story);
         return "view-story";
+    }
+
+    @RequestMapping(value = "/view-story-next", method = RequestMethod.GET)
+    public String showNextPage(HttpServletRequest request, Model model){
+        Long storyId = Long.parseLong(request.getParameter("story-id"));
+        Story story = storyService.findStory(storyId);
+        model.addAttribute("story", story);
+        return "next-part";
+    }
+
+    @RequestMapping(value = "/fork-story-next", method = RequestMethod.GET)
+    public String forkPage(HttpServletRequest request, Model model){
+        Long storyId = Long.parseLong(request.getParameter("story-id"));
+        Story story = storyService.findStory(storyId);
+        model.addAttribute("story", story);
+        return "fork-story";
     }
 
     @RequestMapping(value = "/top-rated", method = RequestMethod.GET)

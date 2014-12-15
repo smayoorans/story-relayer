@@ -100,44 +100,7 @@
             </c:forEach>
 
             <div class="space"></div>
-
-            <%--<h3 class="md-title">Part 2</h3>
-
-            <p class="text-block-v1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent id justo in
-                neque elementum ultrices. Praesent in mauris eu tortor porttitor accumsan. Proin mattis lacinia justo.
-                Fusce aliquam vestibulum ipsum. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Maecenas
-                lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce wisi.
-                Praesent in mauris eu tortor porttitor accumsan. Maecenas aliquet accumsan leo.</p>
-
-            <p class="text-block-v1">Proin mattis lacinia justo. In dapibus augue non sapien. Donec vitae arcu. Fusce
-                nibh. Ut tempus purus at lorem. Fusce aliquam vestibulum ipsum. Praesent dapibus. Vestibulum fermentum
-                tortor id mi. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Nunc dapibus tortor vel
-                mi dapibus sollicitudin. Duis pulvinar. Integer malesuada. Duis sapien nunc, commodo et, interdum
-                suscipit, sollicitudin et, dolor. Vivamus luctus egestas leo. Fusce consectetuer risus a nunc. Nullam
-                justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Phasellus enim erat, vestibulum vel,
-                aliquam a, posuere eu, velit. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-                repellendus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-            <p class="text-block-v1">Morbi scelerisque luctus velit. Curabitur sagittis hendrerit ante. Suspendisse
-                sagittis ultrices augue. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor
-                suscipit diam nulla vel leo. Nullam rhoncus aliquam metus. Temporibus autem quibusdam et aut officiis
-                debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-                recusandae. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum
-                odio risus sit amet ante. Nunc tincidunt ante vitae massa. Maecenas lorem. Sed ut perspiciatis unde
-                omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Donec iaculis
-                gravida nulla.</p>
---%>
         </div>
-        <%--<div class="space"></div>--%>
-           <%-- <a href="#">
-                <div class="btn btn-primary-trn pull-left">
-
-                    <i class="fa fa-long-arrow-left"></i>Back To Story
-                </div>
-            </a>
-    --%>
 
 
         <section class="bg-grey-1">
@@ -157,16 +120,18 @@
                             <i class="fa fa-copy icon-c"></i>
                             <div class="float-text">
                                 <br>
-                                <h4><a href="#">Fork from Here</a></h4>
+                                <h4><a href="fork-story-next?story-id=${story.storyId}">Fork from Here</a></h4>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="float-box center">
+                            <a href="view-story-next?story-id=${story.storyId}">
                             <i class="fa fa-long-arrow-right icon-c"></i>
+                                </a>
                             <div class="float-text">
                                 <br>
-                                <h4><a href="#">Read Next Part</a></h4>
+                                <h4><a href="view-story-next?story-id=${story.storyId}">Read Next Part</a></h4>
                             </div>
                         </div>
                     </div>
@@ -248,100 +213,7 @@
 
             </div>
             <hr>
-          <%--  <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" alt="64x64" src="resources/HTML/assets/img/faces/face-17.jpg">
-                </a>
 
-                <div class="media-body">
-                    <div class="media-header">
-                        <h4 class="media-heading">
-                            <a href="#">Adele Taylor</a>
-                        </h4>
-                        <small>
-                            <em class="media-body-time six" title="May 2, 2013">May 2, 2013</em>
-                        </small>
-
-                    </div>
-                    <div class="media-body-text">
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
-                        commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </div>
-                    <div class="media-footer">
-                        <em>3</em>
-                        <a href="#">
-                            <i title="Like" class="fa  fa-thumbs-o-up"></i>
-                        </a>
-                        <a href="#" class="pull-right comment-box-3-reply" title="Reply">
-                            <i class="fa fa-reply"></i>Reply</a>
-                    </div>
-                </div>
-
-            </div>
-            <hr>
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" alt="64x64" src="resources/HTML/assets/img/faces/face-12.jpg">
-                </a>
-
-                <div class="media-body">
-                    <div class="media-header">
-                        <h4 class="media-heading ">
-                            <a href="#">Ben Berry</a>
-                        </h4>
-                        <small>
-                            <em class="media-body-time six" title="May 2, 2013">May 2, 2013</em>
-                        </small>
-
-                    </div>
-                    <div class="media-body-text">
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
-                        commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-                    </div>
-                    <div class="media-footer">
-                        <em>9</em>
-                        <a href="#">
-                            <i title="Like" class="fa  fa-thumbs-o-up"></i>
-                        </a>
-                        <a href="#" class="pull-right comment-box-3-reply" title="Reply">
-                            <i class="fa fa-reply"></i>Reply</a>
-                    </div>
-
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" alt="64x64" src="resources/HTML/assets/img/faces/face-24.jpg">
-                        </a>
-
-                        <div class="media-body">
-                            <div class="media-header">
-                                <h4 class="media-heading ">
-                                    <a href="#">Jack Brown</a>
-                                </h4>
-                                <small>
-                                    <em class="media-body-time six" title="May 2, 2013">May 2, 2013</em>
-                                </small>
-
-                            </div>
-                            <div class="media-body-text">
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
-                                sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra
-                                turpis.
-                            </div>
-                            <div class="media-footer">
-                                <em>2</em>
-                                <a href="#">
-                                    <i title="Like" class="fa  fa-thumbs-o-up"></i>
-                                </a>
-                                <a href="#" class="pull-right comment-box-3-reply" title="Reply">
-                                    <i class="fa fa-reply"></i>Reply</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>--%>
 
         </div>
 

@@ -30,8 +30,9 @@
 
             <div class="col-md-8 col-lg-9">
 
+
                 <%--Story Block Start--%>
-               <%-- <c:forEach var=" story" items="${topRatedStoryList}">
+                <c:forEach var="story" items="${topRatedStoryList}">
 
                     <div class="row blog-post">
                         <div class="col-sm-6">
@@ -49,10 +50,10 @@
                                     <ul>
                                         <li>
                                             <i class="fa fa-user fa-fw"></i>
-                                            <a href="#" title="View Profile">Mayooran</a>
+                                            <a href="view-story?story-id=${story.storyId}" title="View Profile">${story.initiator.displayName}</a>
                                         </li>
                                         <li>
-                                            <i class="fa fa-clock-o fa-fw"></i>18 April 2014
+                                            <i class="fa fa-clock-o fa-fw"></i>12 December 2014
                                         </li>
                                         <li>
                                             <i class="fa fa-comments fa-fw">
@@ -70,20 +71,16 @@
                                     </ul>
                                 </div>
                                 <img class="img-responsive" alt="Blog Image"
-                                     src="resources/HTML/assets/img/768w/kitsune-4.jpg">
+                                     src="${story.primeImageSrc}">
                             </div>
 
                         </div>
                         <div class="col-sm-6">
-                            <a href="view-story" title="Read all article">
-                                <h2>The Spectacles</h2>
+                            <a href="view-story?story-id=${story.storyId}" title="Read all article">
+                                <h2>${story.storyName}</h2>
                             </a>
 
-                            <p>The narrator, 22-year-old Napoleon Buonaparte, changes his
-                                last name as a requirement
-                                to inherit a large sum from a distant cousin, Adolphus Simpson.
-                                At the opera he sees a beautiful woman in the audience and falls
-                                in love instantly. He describes her beauty at length.</p>
+                            <p>${story.summary}</p>
                             <a href="#" title="Read all article" class="btn btn-primary-trn">
                                 <i class="fa fa-angle-right"></i>Read More
                             </a>
@@ -92,7 +89,7 @@
                     </div>
 
                 </c:forEach>
---%>
+
 
                 <div class="row blog-post">
                     <div class="col-sm-6">
@@ -136,7 +133,7 @@
 
                     </div>
                     <div class="col-sm-6">
-                        <a href="view-story" title="Read all article">
+                        <a href="#" title="Read all article">
                             <h2>The Spectacles</h2>
                         </a>
 
@@ -145,7 +142,7 @@
                             to inherit a large sum from a distant cousin, Adolphus Simpson.
                             At the opera he sees a beautiful woman in the audience and falls
                             in love instantly. He describes her beauty at length.</p>
-                        <a href="view-story" title="Read all article" class="btn btn-primary-trn">
+                        <a href="#" title="Read all article" class="btn btn-primary-trn">
                             <i class="fa fa-angle-right"></i>Read More
                         </a>
                     </div>
@@ -193,7 +190,7 @@
 
                     </div>
                     <div class="col-sm-6">
-                        <a href="view-story" title="Read all article">
+                        <a href="#" title="Read all article">
                             <h2>Oliver Twist</h2>
                         </a>
 
@@ -201,66 +198,13 @@
                             Charles
                             Dickens, published by Richard Bentley in 1838. The story is about an orphan, Oliver Twist,
                             who</p>
-                        <a href="view-story" title="Read all article" class="btn btn-primary-trn">
-                            <i class="fa fa-angle-right"></i>Read More
-                        </a>
-                    </div>
-
-                </div>
-                <div class="row blog-post wow fadeInUp">
-                    <div class="col-sm-6 ">
-                        <div class="hover-content">
-                            <div class="part-a">
-                                <h3>2</h3>
-
-                                <h3>January</h3>
-                            </div>
-                            <div class="part-c">
-                                <img class="img-responsive" src="resources/HTML/assets/img/faces/face-2.jpg"
-                                     alt="Blog Post Author" title="Nicole Perry">
-                            </div>
-                            <div class="part-b">
-                                <ul>
-                                    <li>
-                                        <i class="fa fa-user fa-fw"></i>
-                                        <a href="#" title="View Profile">James Smith</a>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-clock-o fa-fw"></i>2 January 2014
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-comments fa-fw">
-
-                                        </i>
-                                        <a href="#" title="Read Comments">40 Comments</a>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-tags fa-fw"></i>
-                                        <a href="#">Nature,</a>
-                                        <a href="#">Photo,</a>
-                                        <a href="#">Sea</a>
-
-                                    </li>
-                                </ul>
-                            </div>
-                            <img class="img-responsive" alt="Blog Image"
-                                 src="resources/HTML/assets/img/768w/kitsune-3.jpg">
-                        </div>
-
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="#" title="Read all article">
-                            <h2>Mauris quis nibh ut</h2>
-                        </a>
-
-                        <p>Mauris quis nibh ut odio ullamcorper volutpat. Aenean quam ante, tristique et euismod
-                            faucibus, mollis in elit. Nulla sollicitudin hendrerit sapien vel accumsan.</p>
                         <a href="#" title="Read all article" class="btn btn-primary-trn">
                             <i class="fa fa-angle-right"></i>Read More
                         </a>
                     </div>
 
                 </div>
+
 
                 <div class="text-center">
                     <ul class="pagination ">
