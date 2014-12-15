@@ -9,7 +9,6 @@
 
 <head>
     <title><c:out value="${story.storyName}"/></title>
-
 </head>
 
 <body>
@@ -35,7 +34,7 @@
             <p class="text-block visible-xs"><c:out value="${story.summary}"/></p>
 
             <div class="space-sm visible-xs"></div>
-            <img class="img-responsive" src="resources/HTML/assets/img/1920w/932.jpg" alt="Photo of post">
+            <img class="img-responsive" src="resources/HTML/assets/img/7321.jpg" alt="Photo of post">
 
             <div class="post-heading hidden-xs">
                 <h2><c:out value="${story.storyName}"/></h2>
@@ -53,7 +52,8 @@
                 <li>
                     <jsp:useBean id="dateValue" class="java.util.Date"/>
                     <jsp:setProperty name="dateValue" property="time" value="${story.createdTimeStamp}"/>
-                    <i class="fa fa-clock-o fa-fw"></i><fmt:formatDate value="${dateValue}" pattern="MMMM dd, yyyy HH:mm"/>
+                    <i class="fa fa-clock-o fa-fw"></i><fmt:formatDate value="${dateValue}"
+                                                                       pattern="MMMM dd, yyyy HH:mm"/>
                 </li>
                 <li>
                     <i class="fa fa-comments fa-fw">
@@ -92,21 +92,16 @@
             <h3 class="md-title">Part 1</h3>
 
             <c:forEach var="st" items="${story.storyParts}">
-            <p class="text-block-v1" style="text-align: justify;"><c:out value="${st.partContent}"  escapeXml="false"/>
-            </p>
-            </c:forEach>
+                <p class="text-block-v1" style="text-align: justify;">
+                    <c:out value="${st.partContent}" escapeXml="false"/>
+                </p>
 
-            <p class="text-block-v1" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio,
-                dapibus id fermentum quis, suscipit id erat. Mauris metus. Maecenas aliquet accumsan leo. Fusce tellus.
-                Duis pulvinar. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                nisi ut aliquid ex ea commodi consequatur? Duis pulvinar. Nunc dapibus tortor vel mi dapibus
-                sollicitudin. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Nunc dapibus tortor vel mi dapibus sollicitudin. Nullam lectus justo, vulputate eget
-                mollis sed, tempor sed magna.</p>
+                <br>
+            </c:forEach>
 
             <div class="space"></div>
 
-            <h3 class="md-title">Part 2</h3>
+            <%--<h3 class="md-title">Part 2</h3>
 
             <p class="text-block-v1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent id justo in
                 neque elementum ultrices. Praesent in mauris eu tortor porttitor accumsan. Proin mattis lacinia justo.
@@ -133,19 +128,53 @@
                 omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Donec iaculis
                 gravida nulla.</p>
-
+--%>
         </div>
-        <div class="space"></div>
-        <a href="#">
-            <div class="btn btn-primary-trn pull-left">
+        <%--<div class="space"></div>--%>
+           <%-- <a href="#">
+                <div class="btn btn-primary-trn pull-left">
 
-                <i class="fa fa-long-arrow-left"></i>Back To Story
+                    <i class="fa fa-long-arrow-left"></i>Back To Story
+                </div>
+            </a>
+    --%>
+
+
+        <section class="bg-grey-1">
+            <div class="container section">
+                <div class="row margin-b30-xs">
+                    <div class="col-sm-4">
+                        <div class="float-box center">
+                            <i class="fa fa-share icon-c"></i>
+                            <div class="float-text">
+                                <br>
+                                <h4><a href="#">Nominate to Friend</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="float-box center">
+                            <i class="fa fa-copy icon-c"></i>
+                            <div class="float-text">
+                                <br>
+                                <h4><a href="#">Fork from Here</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="float-box center">
+                            <i class="fa fa-long-arrow-right icon-c"></i>
+                            <div class="float-text">
+                                <br>
+                                <h4><a href="#">Read Next Part</a></h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </a>
+        </section>
 
-        <div class="btn btn-primary pull-right">Next Part
-            <i class="fa fa-long-arrow-right"></i>
-        </div>
         <div class="space"></div>
         <div class="comment-box-1 icon">
             <h3>Leave a Comment</h3>
@@ -219,7 +248,7 @@
 
             </div>
             <hr>
-            <div class="media">
+          <%--  <div class="media">
                 <a class="pull-left" href="#">
                     <img class="media-object" alt="64x64" src="resources/HTML/assets/img/faces/face-17.jpg">
                 </a>
@@ -312,7 +341,7 @@
 
                 </div>
 
-            </div>
+            </div>--%>
 
         </div>
 

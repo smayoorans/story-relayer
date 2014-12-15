@@ -145,7 +145,7 @@
                             to inherit a large sum from a distant cousin, Adolphus Simpson.
                             At the opera he sees a beautiful woman in the audience and falls
                             in love instantly. He describes her beauty at length.</p>
-                        <a href="#" title="Read all article" class="btn btn-primary-trn">
+                        <a href="view-story" title="Read all article" class="btn btn-primary-trn">
                             <i class="fa fa-angle-right"></i>Read More
                         </a>
                     </div>
@@ -193,7 +193,7 @@
 
                     </div>
                     <div class="col-sm-6">
-                        <a href="#" title="Read all article">
+                        <a href="view-story" title="Read all article">
                             <h2>Oliver Twist</h2>
                         </a>
 
@@ -201,7 +201,7 @@
                             Charles
                             Dickens, published by Richard Bentley in 1838. The story is about an orphan, Oliver Twist,
                             who</p>
-                        <a href="#" title="Read all article" class="btn btn-primary-trn">
+                        <a href="view-story" title="Read all article" class="btn btn-primary-trn">
                             <i class="fa fa-angle-right"></i>Read More
                         </a>
                     </div>

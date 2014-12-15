@@ -83,7 +83,7 @@ public class StoryController {
     @RequestMapping(value = "/view-story", method = RequestMethod.GET)
     public String showStoryViewPage(HttpServletRequest request, Model model){
 //        Long storyId = Long.parseLong(request.getParameter("story-id"));
-        Long storyId = Long.parseLong("1");
+        Long storyId = Long.parseLong("2");
         Story story = storyService.findStory(storyId);
         model.addAttribute("story", story);
         return "view-story";

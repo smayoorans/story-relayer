@@ -35,11 +35,11 @@
 
 
         <!-- Sidebar -->
-        <li class="dropdown hidden-xs">
+        <div class="dropdown hidden-xs">
           <a href="javascript:void(0);" id="sidebar-btn">
             <i class="fa fa-bars"></i>
           </a>
-        </li>
+        </div>
 
       </ul>
     </div>

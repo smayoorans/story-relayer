@@ -59,12 +59,11 @@
 
         <div class="row">
 
-<%--
             <c:forEach var="story" items="${topRatedStoryList}" varStatus="status" begin="0" end="5" step="1">
 
                 <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
                     <div class="news">
-                        <img class="img-responsive" src="resources/HTML/assets/img/768w/picjumbo.com.jpg" alt="camera">
+                        <img class="img-responsive" src="${story.primeImageSrc}" alt="camera">
 
                         <jsp:useBean id="dateValue" class="java.util.Date"/>
                         <jsp:setProperty name="dateValue" property="time" value="${story.createdTimeStamp}"/>
@@ -82,7 +81,6 @@
                     </div>
                 </div>
             </c:forEach>
-            --%>
 
             <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
                 <div class="news">
@@ -119,7 +117,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
+            <%--<div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
                 <div class="news">
                     <img class="img-responsive" src="resources/HTML/assets/img/768w/bon.jpg" alt="camera">
 
@@ -149,13 +147,13 @@
                         <i class="fa fa-angle-double-right"></i>
                     </a>
                 </div>
-            </div>
+            </div>--%>
 
         </div>
     </div>
 </section>
 
-<section class="bg-9 bg-center bg-fixed">
+<section class="bg-8 bg-center bg-fixed">
     <h5 class="sr-only">Photo of Macbook Pro</h5>
 
     <div class="filling-section bg-filter-v1"></div>
@@ -272,7 +270,7 @@
 </section>
 
 
-<section class="bg-9 bg-center bg-fixed">
+<section class="bg-8 bg-center bg-fixed">
     <h5 class="sr-only">Photo of Macbook Pro</h5>
 
     <div class="filling-section bg-filter-v1"></div>
@@ -305,7 +303,6 @@
                 <div class="col-sm-8">
                     <form:select class="form-control" id="story-genre" path="genre">
                         <c:forEach var="type" items="<%=com.express.pony.model.Genre.values()%>">
-                            <option>Select</option>
                             <form:option value="${type}">${type}</form:option>
                         </c:forEach>
                     </form:select>
