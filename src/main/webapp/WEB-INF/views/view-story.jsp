@@ -89,7 +89,7 @@
             </ul>
         </div>
         <div class="">
-            <h3 class="md-title">Subtitle</h3>
+            <h3 class="md-title">Part 1</h3>
 
             <c:forEach var="st" items="${story.storyParts}">
             <p class="text-block-v1" style="text-align: justify;"><c:out value="${st.partContent}"  escapeXml="false"/>
@@ -106,7 +106,7 @@
 
             <div class="space"></div>
 
-            <h3 class="md-title">Subtitle</h3>
+            <h3 class="md-title">Part 2</h3>
 
             <p class="text-block-v1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent id justo in
                 neque elementum ultrices. Praesent in mauris eu tortor porttitor accumsan. Proin mattis lacinia justo.
@@ -139,11 +139,11 @@
         <a href="#">
             <div class="btn btn-primary-trn pull-left">
 
-                <i class="fa fa-long-arrow-left"></i>Back To Blog Stream
+                <i class="fa fa-long-arrow-left"></i>Back To Story
             </div>
         </a>
 
-        <div class="btn btn-primary pull-right">Next Post
+        <div class="btn btn-primary pull-right">Next Part
             <i class="fa fa-long-arrow-right"></i>
         </div>
         <div class="space"></div>

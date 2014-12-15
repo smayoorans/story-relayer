@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -81,14 +82,17 @@ public class StoryController {
 
     @RequestMapping(value = "/view-story", method = RequestMethod.GET)
     public String showStoryViewPage(HttpServletRequest request, Model model){
-        Long storyId = Long.parseLong(request.getParameter("story-id"));
+//        Long storyId = Long.parseLong(request.getParameter("story-id"));
+        Long storyId = Long.parseLong("1");
         Story story = storyService.findStory(storyId);
         model.addAttribute("story", story);
         return "view-story";
     }
 
     @RequestMapping(value = "/top-rated", method = RequestMethod.GET)
-    public String showTopRatedStories(){
+    public String showTopRatedStories(Model model){
+        List<Story> topRatedStoryList = storyService.listContributedStories("mayoo");
+        model.addAttribute("topRatedStoryList",topRatedStoryList);
         return "top-rated-stories";
     }
 
