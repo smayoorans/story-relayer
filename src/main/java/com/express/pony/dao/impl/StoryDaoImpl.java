@@ -73,4 +73,10 @@ public class StoryDaoImpl implements StoryDao {
         query.setParameter("storyId", storyId);
         return (Story) query.uniqueResult();
     }
+
+    @Override
+    public List<Story> topRatedStories() {
+        Query hql = sessionFactory.getCurrentSession().createQuery("from Story st order by createdTimeStamp desc");
+        return hql.list();
+    }
 }

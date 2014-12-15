@@ -22,4 +22,6 @@ public interface StoryDao {
     boolean removeStory(Long id);
 
     Story findStory(long storyId);
+
+    List<Story> topRatedStories();
 }

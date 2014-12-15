@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="js-no ie9"> <![endif]-->
 <!--[if IE 10]> <html lang="en" class="js-no ie10"> <![endif]-->
@@ -46,67 +49,32 @@
 <!-- Breaking news -->
 <section class="section">
     <div class="container">
-        <h2 class="lg-title lg-title-border">Top Rated Stories <a href="top-rated" class=" pull-right btn btn-primary scroll">
-            <i class="fa fa-paper-plane-o"></i>Browse More</a></h2>
-
+        <h2 class="lg-title lg-title-border">Top Rated Stories
+            <a href="top-rated" class=" pull-right btn btn-primary scroll">
+                <i class="fa fa-paper-plane-o"></i>Browse More</a>
+        </h2>
         <div class="row">
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/011.jpg" alt="camera">
+            <c:forEach var="story" items="${topRatedStoryList}"  varStatus="status" begin="0" end="5" step="1">
 
-                    <h3>Post title</h3>
-                    <em>January 26, 2014 by John</em>
+                <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.8s">
+                    <div class="news">
+                        <img class="img-responsive" src="resources/HTML/assets/img/768w/011.jpg" alt="camera">
 
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
+                        <jsp:useBean id="dateValue" class="java.util.Date"/>
+                        <jsp:setProperty name="dateValue" property="time" value="${story.createdTimeStamp}"/>
+
+                        <h3><c:out value="${story.storyName}"/></h3>
+
+                        <em><fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
+                            by <b><c:out value="${story.initiator.displayName}"/></b>
+                        </em>
+                        <p>${story.summary}</p>
+                        <a href="view-story?story-id=${story.storyId}" class="btn btn-primary-trn">Read more
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.6s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/31f6.JPG" alt="macbook">
-
-                    <h3>Post title</h3>
-                    <em>January 10, 2014 by Ben</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.4s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/picjumbo.com.jpg" alt="devices">
-
-                    <h3>Post title</h3>
-                    <em>December 27, 2013 by Nicole</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="news">
-                    <img class="img-responsive" src="resources/HTML/assets/img/768w/macbook-air.jpg" alt="macbook">
-
-                    <h3>Post title</h3>
-                    <em>December 13, 2013 by Adele</em>
-
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis condimentum augue id magna semper
-                        rutrum. In enim a arcu imperdiet malesuada.</p>
-                    <a href="blog-page.html" class="btn btn-primary-trn">Read more
-                        <i class="fa fa-angle-double-right"></i>
-                    </a>
-                </div>
-            </div>
-
+            </c:forEach>
         </div>
     </div>
 </section>
@@ -122,7 +90,8 @@
 <section class="section-lg">
     <div class="container">
 
-        <h2 class="lg-title lg-title-border">Browse Stories <a href="top-rated" class=" pull-right btn btn-primary scroll">
+        <h2 class="lg-title lg-title-border">Browse Stories <a href="top-rated"
+                                                               class=" pull-right btn btn-primary scroll">
             <i class="fa fa-paper-plane-o"></i>Browse More</a></h2>
 
         <ul class="filter-tabs">

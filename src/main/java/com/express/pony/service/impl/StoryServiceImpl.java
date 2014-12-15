@@ -64,4 +64,12 @@ public class StoryServiceImpl implements StoryService {
 	public Story findStory(long storyId) {
 		return storyDao.findStory(storyId);
 	}
+
+	@Override
+	@Transactional
+	public List<Story> topRatedStories() {
+		return storyDao.topRatedStories();
+	}
+
+
 }

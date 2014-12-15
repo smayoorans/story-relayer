@@ -28,7 +28,6 @@ public class HomeController {
     	ModelAndView model = new ModelAndView();
         model.setViewName("index");
 
-
         List<Story> horrorStoryList = storyService.listLatestStories(Genre.Romance);
         List<Story> topRatedStoryList = storyService.listContributedStories("mayoo");
         model.addObject("topRatedStoryList",topRatedStoryList);

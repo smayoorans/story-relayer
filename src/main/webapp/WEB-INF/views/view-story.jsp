@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="js-no ie9"> <![endif]-->
 <!--[if IE 10]> <html lang="en" class="js-no ie10"> <![endif]-->
@@ -6,7 +8,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Story Title</title>
+    <title><c:out value="${story.storyName}"/></title>
 
 </head>
 
@@ -17,7 +19,7 @@
 <section class="bg-15 bg-center bg-cover">
     <div class="bg-filter">
         <div class="container section-lg">
-            <h1 class="top-title">Story Title</h1>
+            <h1 class="top-title"><c:out value="${story.storyName}"/></h1>
         </div>
     </div>
 </section>
@@ -28,23 +30,17 @@
 <section class="section">
     <div class="container">
         <div class="post-header">
-            <h2 class="visible-xs">Title of article</h2>
+            <h2 class="visible-xs"><c:out value="${story.storyName}"/></h2>
 
-            <p class="text-block visible-xs">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus
-                odio, dapibus id fermentum quis, suscipit id erat. Mauris metus. Maecenas aliquet accumsan leo. Fusce
-                tellus. Duis pulvinar. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-                laboriosam, nisi ut aliquid ex ea commodi consequatur? Duis pulvinar.</p>
+            <p class="text-block visible-xs"><c:out value="${story.summary}"/></p>
 
             <div class="space-sm visible-xs"></div>
             <img class="img-responsive" src="resources/HTML/assets/img/1920w/932.jpg" alt="Photo of post">
 
             <div class="post-heading hidden-xs">
-                <h2>Title of article</h2>
+                <h2><c:out value="${story.storyName}"/></h2>
 
-                <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio, dapibus id
-                    fermentum quis, suscipit id erat. Mauris metus. Maecenas aliquet accumsan leo. Fusce tellus. Duis
-                    pulvinar. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                    nisi ut aliquid ex ea commodi consequatur? Duis pulvinar.</p>
+                <p class="lead"><c:out value="${story.summary}"/></p>
 
             </div>
         </div>
@@ -52,10 +48,12 @@
             <ul class="tags list-unstyled pull-left">
                 <li>
                     <i class="fa fa-user fa-fw"></i>
-                    <a href="#" title="View Profile">Nicole Perry</a>
+                    <a href="#" title="View Profile">Initiator <c:out value="${story.initiator.displayName}"/></a>
                 </li>
                 <li>
-                    <i class="fa fa-clock-o fa-fw"></i>18 April 2014
+                    <jsp:useBean id="dateValue" class="java.util.Date"/>
+                    <jsp:setProperty name="dateValue" property="time" value="${story.createdTimeStamp}"/>
+                    <i class="fa fa-clock-o fa-fw"></i><fmt:formatDate value="${dateValue}" pattern="MMMM dd, yyyy HH:mm"/>
                 </li>
                 <li>
                     <i class="fa fa-comments fa-fw">
@@ -72,81 +70,39 @@
                 </li>
             </ul>
             <ul class="square-icons share-icons-list pull-right">
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-google-plus"></i>
 
-                        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
-                             data-layout="button_count"></div>
+                <li>
 
-                        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+
+                </li>
+
+                <li>
+
+                    <div class="fb-share-button"
+                         data-href="http://localhost:9090/story-relayer/view-story?story-id=${story.storyId}"
+                         data-layout="button_count"></div>
+
+                </li>
 
 
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-tumblr"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-pinterest"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-youtube-play"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Share">
-                        <i class="fa fa-dribbble"></i>
-                    </a>
-                </li>
             </ul>
         </div>
-        <div>
+        <div class="">
             <h3 class="md-title">Subtitle</h3>
 
-            <p class="text-block-v1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio,
+            <c:forEach var="st" items="${story.storyParts}">
+            <p class="text-block-v1" style="text-align: justify;"><c:out value="${st.partContent}"  escapeXml="false"/>
+            </p>
+            </c:forEach>
+
+            <p class="text-block-v1" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio,
                 dapibus id fermentum quis, suscipit id erat. Mauris metus. Maecenas aliquet accumsan leo. Fusce tellus.
                 Duis pulvinar. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
                 nisi ut aliquid ex ea commodi consequatur? Duis pulvinar. Nunc dapibus tortor vel mi dapibus
                 sollicitudin. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Nunc dapibus tortor vel mi dapibus sollicitudin. Nullam lectus justo, vulputate eget
                 mollis sed, tempor sed magna.</p>
-
-            <p class="text-block-v1">Fusce suscipit libero eget elit. Ut tempus purus at lorem. Aenean id metus id velit
-                ullamcorper pulvinar. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Fusce dui leo,
-                imperdiet in, aliquam sit amet, feugiat eu, orci. In convallis. Nulla accumsan, elit sit amet varius
-                semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Phasellus faucibus molestie nisl.
-                Etiam posuere lacus quis dolor. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero,
-                eget facilisis enim ipsum id lacus. Maecenas sollicitudin. Etiam dui sem, fermentum vitae, sagittis id,
-                malesuada in, quam. Nullam sit amet magna in magna gravida vehicula. Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit. Maecenas fermentum, sem in pharetra pellentesque, velit turpis volutpat
-                ante, in pharetra metus odio a lectus. Pellentesque sapien. Maecenas ipsum velit, consectetuer eu
-                lobortis ut, dictum at dui.</p>
-
-            <p class="text-block-v1">Aenean fermentum risus id tortor. Etiam sapien elit, consequat eget, tristique non,
-                venenatis quis, ante. Integer pellentesque quam vel velit. Fusce consectetuer risus a nunc. Integer
-                vulputate sem a nibh rutrum consequat. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis
-                quam, tempor suscipit diam nulla vel leo. Mauris dolor felis, sagittis at, luctus sed, aliquam non,
-                tellus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris
-                tincidunt sem sed arcu. Suspendisse nisl. Nunc tincidunt ante vitae massa. Vestibulum erat nulla,
-                ullamcorper nec, rutrum non, nonummy ac, erat. Maecenas aliquet accumsan leo. Duis pulvinar. Etiam
-                neque. Vivamus luctus egestas leo. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam
-                ultricies odio, vitae placerat pede sem sit amet enim. Praesent dapibus.</p>
 
             <div class="space"></div>
 

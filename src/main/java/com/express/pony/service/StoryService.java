@@ -23,4 +23,6 @@ public interface StoryService {
     boolean removeStory(Long id);
 
     Story findStory(long storyId);
+
+    List<Story> topRatedStories();
 }

@@ -34,9 +34,14 @@
 
     <!--  Slippry Slideshow -->
     <link href="resources/HTML/assets/css/slippry.min.css" rel="stylesheet">
+
+    <link href="resources/froala_editor/css/froala_editor.min.css" rel="stylesheet" type="text/css">
+    <link href="resources/froala_editor/css/froala_style.min.css" rel="stylesheet" type="text/css">
+
     <decorator:head/>
 </head>
 <body>
+<div id="fb-root"></div>
 <script type="text/javascript">(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -44,6 +49,7 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 <script type="text/javascript">
     !function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -106,6 +112,26 @@
 
 <!-- Contact Form -->
 <script src="resources/HTML/assets/js/min/contact-form.min.js" type="text/javascript"></script>
+
+<script src="resources/froala_editor/js/froala_editor.min.js"></script>
+<!--[if lt IE 9]>
+<script src="resources/froala_editor/js/froala_editor_ie8.min.js"></script>
+<![endif]-->
+<script src="resources/froala_editor/js/plugins/tables.min.js"></script>
+<script src="resources/froala_editor/js/plugins/lists.min.js"></script>
+<script src="resources/froala_editor/js/plugins/colors.min.js"></script>
+<script src="resources/froala_editor/js/plugins/font_family.min.js"></script>
+<script src="resources/froala_editor/js/plugins/font_size.min.js"></script>
+<script src="resources/froala_editor/js/plugins/block_styles.min.js"></script>
+<script src="resources/froala_editor/js/plugins/media_manager.min.js"></script>
+<script src="resources/froala_editor/js/plugins/video.min.js"></script>
+<script src="resources/froala_editor/js/plugins/char_counter.min.js"></script>
+
+<script>
+    $(function(){
+        $('#edit').editable({inlineMode: false, height: 300})
+    });
+</script>
 
 <!-- Must be last of all scripts -->
 <script src="resources/HTML/assets/js/min/scripts.min.js" type="text/javascript"></script>

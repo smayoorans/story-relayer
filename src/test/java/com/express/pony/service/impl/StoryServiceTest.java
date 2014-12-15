@@ -22,8 +22,7 @@ import com.express.pony.service.StoryService;
 import com.express.pony.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:test-app-context.xml",
-		"classpath:hibernate.cfg.xml" })
+@ContextConfiguration(locations = { "classpath:test-app-context.xml", "classpath:hibernate.cfg.xml" })
 public class StoryServiceTest {
 
 	@Autowired

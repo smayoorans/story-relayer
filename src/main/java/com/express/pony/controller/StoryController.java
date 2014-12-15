@@ -34,11 +34,14 @@ public class StoryController {
     @RequestMapping(value = "/initiate-action", method = RequestMethod.POST)
     public String onRegistrationAction(@ModelAttribute("story") Story story,
                                        BindingResult bindingResult,
-                                       Model model) {
+                                       Model model,
+                                       Authentication authentication) {
   /*      if (bindingResult.hasErrors()) {
             return "sign-up";
         } else {*/
         story.setCreatedTimeStamp((new Date()).getTime());
+        User user = userService.findUser(authentication.getName());
+        story.setInitiator(user);
         storyService.initiateStory(story);
         model.addAttribute("storyId", story.getStoryId());
         return "add-initial-story";
