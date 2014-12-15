@@ -81,9 +81,9 @@
                         <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
                         <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
                         <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
-                        <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
 
+                        <br>
+                        <em>Category :<c:out value="${story.genre}"/></em>
                         <p>${story.summary}</p>
                         <a href="view-story?story-id=${story.storyId}" class="btn btn-primary-trn">Read more
                             <i class="fa fa-angle-double-right"></i>
@@ -97,7 +97,11 @@
                     <img class="img-responsive" src="resources/HTML/assets/img/768w/spectacles.jpg" alt="camera">
 
                     <h3>The Spectacles</h3>
-                    <em>December 12, 2014 by Mayooran</em><br>
+                    <em>December 12, 2014 by <b>Mayooran</b></em>
+                    &nbsp;
+                    <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                    <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                    <br>
                     <em>Category :Comedy</em>
 
                     <p>The narrator, 22-year-old Napoleon Buonaparte, changes his
@@ -116,7 +120,10 @@
                     <img class="img-responsive" src="resources/HTML/assets/img/768w/oliver_twist.jpg" alt="camera">
 
                     <h3>Oliver Twist</h3>
-                    <em>December 12, 2014 by Mayooran</em><br>
+                    <em>December 12, 2014 by <b>Mayooran</b></em>
+                    &nbsp;
+                    <small><img src="<c:url value="/resources/img/star.png"/>" class="star-rate"></small>
+                    <br>
                     <em>Category :Moral</em>
 
                     <p>Oliver Twist, subtitled The Parish Boy's Progress, is the second novel by English author Charles

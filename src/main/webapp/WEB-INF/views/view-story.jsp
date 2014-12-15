@@ -34,7 +34,7 @@
             <p class="text-block visible-xs"><c:out value="${story.summary}"/></p>
 
             <div class="space-sm visible-xs"></div>
-            <img class="img-responsive" src="resources/HTML/assets/img/7321.jpg" alt="Photo of post">
+            <img class="img-responsive" src="${story.primeImageSrc}" alt="Photo of post">
 
             <div class="post-heading hidden-xs">
                 <h2><c:out value="${story.storyName}"/></h2>
@@ -117,6 +117,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="float-box center">
+                            <a href="fork-story-next?story-id=${story.storyId}">
                             <i class="fa fa-copy icon-c"></i>
                             <div class="float-text">
                                 <br>

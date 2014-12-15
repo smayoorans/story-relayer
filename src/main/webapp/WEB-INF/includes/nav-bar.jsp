@@ -20,7 +20,7 @@
                     <!--Get Started-->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0">
-                            <i class="fa fa-home"></i>&nbsp; Welcome <sec:authentication property="principal.username"/>
+                            </i>&nbsp; Welcome <sec:authentication property="principal.username"/>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
