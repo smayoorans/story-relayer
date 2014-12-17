@@ -1,6 +1,7 @@
 package com.express.pony.model;
 
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;

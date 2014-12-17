@@ -43,7 +43,15 @@ public class StoryController {
         story.setCreatedTimeStamp((new Date()).getTime());
         User user = userService.findUser(authentication.getName());
         story.setInitiator(user);
+
+        StorySpec storySpec = new StorySpec();
+        storySpec.setStoryStatus(StoryStatus.ON_GOING);
+        storySpec.setCanFork(true);
+        storySpec.setRestrictionType(RestrictionType.InitiatorControlled);
+
+        story.setStorySpec(storySpec);
         storyService.initiateStory(story);
+
         model.addAttribute("storyId", story.getStoryId());
         return "add-initial-story";
     }

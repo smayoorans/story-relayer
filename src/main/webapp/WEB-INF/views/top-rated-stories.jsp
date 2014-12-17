@@ -71,7 +71,7 @@
                                     </ul>
                                 </div>
                                 <img class="img-responsive" alt="Blog Image"
-                                     src="${story.primeImageSrc}">
+                                     src="resources/HTML/assets/img/768w/kitsune-4.jpg">
                             </div>
 
                         </div>
