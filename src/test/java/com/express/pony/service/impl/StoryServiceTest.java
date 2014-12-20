@@ -37,9 +37,8 @@ public class StoryServiceTest {
 		user.setUserId(userService.findNewUserId());
 		user.setUsername("Tester" + calledTimestamp);
 		user.setDisplayName("Tester" + calledTimestamp);
-		user.setEmailAddress("tester@test.com");
-		user.setFirstName("Tester" + calledTimestamp);
-		user.setLastName("Tester");
+		user.setEmail("tester@test.com");
+		user.setFullName("Tester" + calledTimestamp);
 
 		return user;
 	}

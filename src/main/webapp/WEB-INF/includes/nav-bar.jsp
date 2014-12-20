@@ -12,9 +12,6 @@
         </div>
 
         <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-            <%--<ul class="nav navbar-nav">
-                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            </ul>--%>
             <ul class="nav navbar-nav navbar-right ">
                 <sec:authorize access="isAuthenticated()">
                     <!--Get Started-->
@@ -24,7 +21,6 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                    <%--<a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-sign-in"></i>&nbsp;Login</a>--%>
                                 <a href="user-profile"><i class="fa fa-user"></i>&nbsp;Profile</a>
                             </li>
                             <li>

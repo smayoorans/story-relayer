@@ -1,7 +1,6 @@
 package com.express.pony.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 
@@ -12,11 +11,9 @@ public class User implements Serializable {
 
     @Id
     private String userId;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private String displayName;
-    private String emailAddress;
-    private String favCategory;
+    private String email;
     private String username;
     private String password;
 
@@ -28,20 +25,12 @@ public class User implements Serializable {
         this.userId = userId;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFullName(String firstName) {
+        this.fullName = firstName;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getLastName() {
-        return lastName;
+    public String getFullName() {
+        return fullName;
     }
 
     public void setDisplayName(String displayName) {
@@ -52,20 +41,12 @@ public class User implements Serializable {
         return displayName;
     }
 
-    public void setFavCategory(String favCategory) {
-        this.favCategory = favCategory;
+    public void setEmail(String emailAddress) {
+        this.email = emailAddress;
     }
 
-    public String getFavCategory() {
-        return favCategory;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmail() {
+        return email;
     }
 
     public String getUsername() {
@@ -87,11 +68,9 @@ public class User implements Serializable {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("User{");
-        sb.append("firstName='").append(firstName).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append("firstName='").append(fullName).append('\'');
         sb.append(", displayName='").append(displayName).append('\'');
-        sb.append(", emailAddress='").append(emailAddress).append('\'');
-        sb.append(", favCategory='").append(favCategory).append('\'');
+        sb.append(", emailAddress='").append(email).append('\'');
         sb.append(", password='").append(password).append('\'');
         sb.append('}');
         return sb.toString();

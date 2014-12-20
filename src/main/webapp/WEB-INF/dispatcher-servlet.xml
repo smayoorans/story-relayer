@@ -7,7 +7,6 @@
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
     <import resource="spring-database.xml"/>
 
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -25,13 +24,9 @@
         </property>
     </bean>
 
-
-    <bean id="multipartResolver"
-                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- setting maximum upload size -->
         <property name="maxUploadSize" value="100000" />
-
     </bean>
 
     <!-- Hibernate Session Factory -->
@@ -45,11 +40,9 @@
                 <prop key="hibernate.connection.url">${mysql.login.url}</prop>
                 <prop key="hibernate.connection.username">${mysql.login.username}</prop>
                 <prop key="hibernate.connection.password">${mysql.login.password}</prop>
-
                 <!-- Echo all executed SQL to stdout -->
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
-
             </props>
         </property>
     </bean>

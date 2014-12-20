@@ -1,150 +1,145 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="js-no ie9"> <![endif]-->
+<!--[if IE 10]> <html lang="en" class="js-no ie10"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+<!--<![endif]-->
+
 <head>
     <title>Registration</title>
-    <style>
-        .error {
-            color: #ff0000;
-        }
-    </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="well">
-                <form:form class="form-horizontal" role="form" method="post" commandName="user"
-                           action="registration-action">
-
-                    <h3>Registration Details</h3>
-                    Please enter your details in the form below.
-                    <br>
-                    <br>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Essential Information</div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label for="username" class="col-sm-3 control-label">Username</label>
-
-                                <div class="col-sm-5">
-                                    <form:input type="text" class="form-control" id="username" path="username"
-                                                placeholder="Username"/>
-                                    <form:errors cssClass="help-block error" path="username"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="col-sm-3 control-label">Password</label>
-
-                                <div class="col-sm-6">
-                                    <form:input type="password" class="form-control" id="password" path="password"
-                                                placeholder="Password"/>
-                                </div>
-                            </div>
-                                <%--<div class="form-group">
-                                    <label for="confirm-password" class="col-sm-3 control-label">Confirm Password</label>
-
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password"/>
-                                    </div>
-                                </div>--%>
-                            <div class="checkbox">
-                                <label class="col-sm-offset-3 col-sm-10">
-                                    <input type="checkbox"> I accept terms and conditions
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <br>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Additional Information</div>
-                        <div class="panel-body">
-
-                            <div class="form-group">
-                                <label for="emailAddress" class="col-sm-3 control-label">Email</label>
-
-                                <div class="col-sm-7">
-                                    <form:input type="text" class="form-control" id="emailAddress" path="emailAddress"
-                                                placeholder="Email"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="firstName" class="col-sm-3 control-label">First Name</label>
-
-                                <div class="col-sm-7">
-                                    <form:input type="text" class="form-control" id="firstName" path="firstName"
-                                                placeholder="First Name"/>
-                                    <form:errors cssClass="help-block error" path="firstName"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName" class="col-sm-3 control-label">Last Name</label>
-
-                                <div class="col-sm-7">
-                                    <form:input type="text" class="form-control" id="lastName" path="lastName"
-                                                placeholder="Last Name"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="displayName" class="col-sm-3 control-label">Display Name</label>
-
-                                <div class="col-sm-5">
-                                    <form:input type="text" class="form-control" id="displayName" path="displayName"
-                                                placeholder="Display Name"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="displayName" class="col-sm-3 control-label">Country</label>
-
-                                <div class="col-sm-5">
-                                    <select class="form-control" id="displayName">
-                                        <option>Sri Lanka</option>
-                                        <option>India</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                                <%--<div class="form-group">
-                                    <label for="profileImage" class="col-sm-3 control-label">Profile Image</label>
-
-                                    <div class="col-sm-5">
-                                        &lt;%&ndash;<input type="text" class="form-control" id="profileImage"/>&ndash;%&gt;
-
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                    <img data-src="holder.js/100%x100%" alt="...">
-                                                </div>
-                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-                                                <div>
-                                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-                                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
-    --%>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">Register</button>
-                            &nbsp;
-                            <button type="button" class="btn btn-default">Cancel</button>
-                        </div>
-                    </div>
-                </form:form>
-            </div>
+<!--===    HEADER     ===-->
+<section class="bg-20 bg-center bg-cover">
+    <div class="bg-filter">
+        <div class="container section-lg">
+            <h1 class="top-title">Register Now</h1>
         </div>
     </div>
-</div>
+</section>
+<!--===/END      HEADER     ===-->
+
+<!--===    MAIN WRAP     ===-->
+<section class="container section-lg">
+    <div class="row">
+        <form:form class="form-horizontal" role="form" method="post" commandName="user" action="registration-action">
+            <div class="col-md-6 col-sm-7">
+                <!-- Contact Form -->
+                <h3>Essential Info</h3>
+
+                <div class="form-group">
+                    <label for="fullName" class="col-sm-4 control-label">Full name</label>
+
+                    <div class="col-sm-8 ">
+                        <div class="control">
+                            <form:input type="text" class="form-control" path="fullName" name="fullName"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-4 control-label">Email</label>
+
+                    <div class="col-sm-8 ">
+                        <div class="control">
+                            <form:input type="text" class="form-control" path="email" id="email" name="email"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="displayName" class="col-sm-4 control-label">Display Name</label>
+
+                    <div class="col-sm-8 ">
+                        <div class="control">
+                            <form:input type="text" class="form-control" path="displayName" name="displayName"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="col-sm-4 control-label">Username</label>
+
+                    <div class="col-sm-8 ">
+                        <div class="control">
+                            <form:input type="text" class="form-control" path="username" name="username"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-4 control-label">Password</label>
+
+                    <div class="col-sm-8 ">
+                        <div class="control">
+                            <form:input type="password" class="form-control" path="password" id="password"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-5">
+                <h3>Additional Info</h3>
+
+                <div class="form-group">
+                    <label for="genre" class="col-sm-4 control-label">Preferred Genre</label>
+
+                    <div class="col-sm-8">
+                        <div class="control">
+                            <input type="text" class="form-control" id="genre"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="language" class="col-sm-4 control-label">Preferred Language</label>
+
+                    <div class="col-sm-8">
+                        <div class="control">
+                            <select class="form-control" id="language">
+                                <option>Select</option>
+                                <option>English</option>
+                                <option>French</option>
+                                <option>German</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <%--<label for="sex" class="col-sm-4 control-label">Preferred Language</label>--%>
+
+                    <div class="col-sm-8">
+                        <div class="control">
+
+                            <input type="radio" class="form-control" name="sex"/>
+                            <input type="radio" class="form-control" name="sex"/>
+
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group icon">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-paper-plane-o"></i>Submit
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <i class="fa fa-close"></i>Cancel
+                    </button>
+                </div>
+            </div>
+            <div class="space visible-xs"></div>
+        </form:form>
+    </div>
+
+</section>
+
+
 </body>
 </html>
