@@ -94,38 +94,6 @@
 <![endif]-->
 
 <!--===/END    SCRIPTS     ===-->
-<%--
-<script src="<c:url value="/resources/js/jquery.min.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/resources/js/bootstrap.js"/>" type="text/javascript"></script>
-
-&lt;%&ndash;<script src="resources/froala_editor/js/libs/jquery-1.11.1.min.js" type="text/javascript"></script>&ndash;%&gt;
-<script src="resources/froala_editor/js/froala_editor.min.js" type="text/javascript"></script>
-<!--[if lt IE 9]>
-<script src="resources/froala_editor/js/froala_editor_ie8.min.js" type="text/javascript"></script>
-<![endif]-->
-<script src="resources/froala_editor/js/plugins/tables.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/lists.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/colors.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/font_family.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/font_size.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/block_styles.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/media_manager.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/video.min.js" type="text/javascript"></script>
-<script src="resources/froala_editor/js/plugins/char_counter.min.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-    $(function () {
-        $('#edit').editable({inlineMode: false, height: 250})
-    });
-</script>
-&lt;%&ndash;$('#edit').editable({inlineMode: false, height: 300})&ndash;%&gt;
-<script type="text/javascript">
-    $(function () {
-        $('[data-toggle="popover"]').popover();
-    });
-</script>
---%>
-
 </body>
 </html>
 

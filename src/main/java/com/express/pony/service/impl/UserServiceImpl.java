@@ -1,6 +1,7 @@
 package com.express.pony.service.impl;
 
 import com.express.pony.dao.UserDao;
+import com.express.pony.model.Avatar;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
 import com.express.pony.service.UserService;
@@ -44,6 +45,11 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User findUser(String username) {
         return userDao.findUser(username);
+    }
+
+    @Transactional
+    public void addAvatar(Avatar avatar) {
+        userDao.addAvatar(avatar);
     }
 
 }

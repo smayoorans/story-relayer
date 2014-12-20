@@ -27,7 +27,8 @@
 
                     <div class="space-sm"></div>
                     <p class="wow fadeInUp" data-wow-delay="0.2s">
-                        <fmt:message key="introduction.to.story.relayer"/>
+                        <fmt:message key="introduction.to.story.relayer.part1"/><br>
+                        <fmt:message key="introduction.to.story.relayer.part2"/>
                     </p>
 
                     <div class="space-sm"></div>

@@ -1,6 +1,7 @@
 package com.express.pony.service;
 
 
+import com.express.pony.model.Avatar;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
 
@@ -19,4 +20,6 @@ public interface UserService {
     public String findNewUserId();
 
     public User findUser(String username);
+
+    public void addAvatar(Avatar avatar);
 }

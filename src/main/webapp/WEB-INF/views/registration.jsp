@@ -23,7 +23,7 @@
         </div>
     </div>
 </section>
-<!--===/END      HEADER     ===-->
+<!--===/END HEADER     ===-->
 
 <!--===    MAIN WRAP     ===-->
 <section class="container section-lg">
@@ -110,15 +110,16 @@
                 </div>
 
                 <div class="form-group">
-                        <%--<label for="sex" class="col-sm-4 control-label">Preferred Language</label>--%>
+                    <label for="language2" class="col-sm-4 control-label">Preferred Language</label>
 
                     <div class="col-sm-8">
                         <div class="control">
-
-                            <input type="radio" class="form-control" name="sex"/>
-                            <input type="radio" class="form-control" name="sex"/>
-
-                            <i class="fa fa-user"></i>
+                            <select class="form-control" id="language2">
+                                <option>Select</option>
+                                <option>English</option>
+                                <option>French</option>
+                                <option>German</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -139,7 +140,5 @@
     </div>
 
 </section>
-
-
 </body>
 </html>

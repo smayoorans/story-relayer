@@ -1,6 +1,7 @@
 package com.express.pony.dao.impl;
 
 import com.express.pony.dao.UserDao;
+import com.express.pony.model.Avatar;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
 import org.hibernate.Query;
@@ -55,5 +56,10 @@ public class UserDaoImpl implements UserDao {
         Query query = sessionFactory.getCurrentSession().createQuery(hqlQuery);
         query.setParameter("username", username);
         return (User) query.uniqueResult();
+    }
+
+    @Override
+    public void addAvatar(Avatar avatar) {
+        sessionFactory.getCurrentSession().save(avatar);
     }
 }

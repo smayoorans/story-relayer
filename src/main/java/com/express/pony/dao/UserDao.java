@@ -1,6 +1,7 @@
 package com.express.pony.dao;
 
 
+import com.express.pony.model.Avatar;
 import com.express.pony.model.User;
 import com.express.pony.model.UserRole;
 
@@ -20,4 +21,5 @@ public interface UserDao {
 
     public User findUser(String username);
 
+    public void addAvatar(Avatar avatar);
 }

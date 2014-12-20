@@ -17,5 +17,6 @@
         <mapping class="com.express.pony.model.Story"/>
         <mapping class="com.express.pony.model.StorySpec"/>
         <mapping class="com.express.pony.model.StoryPart"/>
+        <mapping class="com.express.pony.model.Avatar"/>
     </session-factory>
 </hibernate-configuration>
